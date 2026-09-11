@@ -1,42 +1,42 @@
-import type { Metadata } from 'next'
-import { Source_Serif_4, IBM_Plex_Sans } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { CookieConsentProvider } from '@/components/CookieConsentProvider'
-import { CookieConsent } from '@/components/CookieConsent'
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
-import './globals.css'
-
-const sourceSerif = Source_Serif_4({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-source-serif',
-  weight: ['400', '600', '700'],
-})
-
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-ibm-plex',
-  weight: ['400', '500', '600'],
-})
+import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { CookieConsentProvider } from '@/components/CookieConsentProvider';
+import { CookieConsent } from '@/components/CookieConsent';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import SpeculationRules from '@/components/SpeculationRules';
+import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kfzwechselsaison.de'),
   title: {
-    default: 'KFZ Wechselsaison – Kfz-Versicherung vergleichen, wechseln und sparen',
+    default: 'KFZ Wechselsaison 2026/2027 – Fristen nach § 40 VVG, Sparrechner & Kündigung',
     template: '%s | KFZ Wechselsaison',
   },
   description:
-    'Unabhängiges Verbraucherportal rund um den Kfz-Versicherungswechsel: Tarife vergleichen, Kündigungsfristen prüfen, Tipps zum Wechsel. Jetzt informieren.',
+    'Unabhängiges deutsches Fachportal zum Kfz-Versicherungswechsel: Stichtag 30. November, Kündigungsfristen nach § 40 VVG, Ersparnisrechner, GDV-Typklassen und rechtssicherer Kündigungs-Generator.',
   openGraph: {
     type: 'website',
     locale: 'de_DE',
+    url: 'https://kfzwechselsaison.de',
     siteName: 'KFZ Wechselsaison',
+    title: 'KFZ Wechselsaison 2026/2027 – Stichtag 30. November & Sparpotenziale',
+    description: 'Unabhängiges Verbraucherportal zum Autoversicherungs-Wechsel. Gesetzliche Fristen, Ersparnisrechner und Kündigungsvorlagen.',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'KFZ Wechselsaison 2026/2027',
+      },
+    ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
+    title: 'KFZ Wechselsaison 2026/2027 – Wechselfristen & Ersparnisrechner',
+    description: 'Unabhängiges Verbraucherportal rund um den Kfz-Versicherungswechsel, Fristen nach VVG und GDV-Typklassen.',
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,
@@ -57,38 +57,53 @@ export const metadata: Metadata = {
     shortcut: ['/favicon.ico?v=3'],
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || '',
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || 'google-site-verification-kfzwechselsaison',
   },
-}
+};
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://kfzwechselsaison.de/#org',
   name: 'KFZ Wechselsaison',
   url: 'https://kfzwechselsaison.de',
+  logo: 'https://kfzwechselsaison.de/icon.png',
   description:
-    'Unabhängiges Verbraucherportal rund um den Kfz-Versicherungswechsel in Deutschland.',
+    'Unabhängiges deutsches Verbraucher- und Fachportal rund um den Kfz-Versicherungswechsel, Fristen nach VVG und Tarifoptimierung.',
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'domain@kathe.org',
+    email: 'jens@kathe.org',
     contactType: 'customer service',
     availableLanguage: 'German',
   },
-}
+};
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': 'https://kfzwechselsaison.de/#website',
   name: 'KFZ Wechselsaison',
   url: 'https://kfzwechselsaison.de',
+  inLanguage: 'de-DE',
+  publisher: { '@id': 'https://kfzwechselsaison.de/#org' },
   description:
-    'Kfz-Versicherung vergleichen, wechseln und sparen – das unabhängige Verbraucherportal.',
-}
+    'Unabhängiges Portal zum Kfz-Versicherungswechsel: Fristen nach § 40 VVG, Ersparnisrechner und Kündigung.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://kfzwechselsaison.de/ratgeber?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${sourceSerif.variable} ${ibmPlexSans.variable}`}>
+    <html lang="de">
       <head>
+        <link rel="alternate" type="application/rss+xml" title="KFZ Wechselsaison RSS Feed" href="/feed.xml" />
+        <SpeculationRules />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -96,7 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col bg-white text-slate-900 selection:bg-amber-100 selection:text-amber-950">
         <CookieConsentProvider>
           <Header />
           <main className="flex-1">{children}</main>
@@ -107,5 +122,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SpeedInsights />
       </body>
     </html>
-  )
+  );
 }

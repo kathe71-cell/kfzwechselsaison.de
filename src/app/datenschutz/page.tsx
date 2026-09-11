@@ -31,12 +31,13 @@ export default function DatenschutzPage() {
           <p>
             Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
           </p>
-          <p className="my-2 rounded bg-surface-subtle p-4 font-mono text-sm text-text">
-            Jens Kathe<br />
-            Hansastraße 6<br />
-            34119 Kassel<br />
-            Deutschland<br />
-            E-Mail: domain@kathe.org
+          <p className="my-2 rounded bg-slate-50 p-4 text-sm text-slate-800 border border-slate-200">
+            Verantwortliche Stelle: Jens Kathe<br />
+            Vollständige Kontaktdaten sowie ladungsfähige Anschrift siehe{' '}
+            <a href="/impressum/" className="font-semibold text-slate-900 underline hover:text-amber-600">
+              Impressum
+            </a>.<br />
+            E-Mail: <a href="mailto:jens@kathe.org" className="underline">jens@kathe.org</a>
           </p>
           <p>
             Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.

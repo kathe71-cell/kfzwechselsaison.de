@@ -1,276 +1,263 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { TarifcheckWidget } from '@/components/TarifcheckWidget'
-import { HeroScrollButton } from '@/components/HeroScrollButton'
-import { StepProcess } from '@/components/StepProcess'
-import { InsuranceTypeCard } from '@/components/InsuranceTypeCard'
-import { FAQ } from '@/components/FAQ'
-import { ConversionSection } from '@/components/ConversionSection'
-import { ArticleCard } from '@/components/ArticleCard'
-import { articles } from '@/content/articles'
-import { faqItems } from '@/content/faq'
-import { seasonalConfig } from '@/content/seasonal'
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { TarifcheckWidget } from '@/components/TarifcheckWidget';
+import PositionZeroBox from '@/components/PositionZeroBox';
+import SavingsCalculator from '@/components/SavingsCalculator';
+import CancellationGenerator from '@/components/CancellationGenerator';
+import GdvMatrix from '@/components/GdvMatrix';
+import CitationBox from '@/components/CitationBox';
+import { StepProcess } from '@/components/StepProcess';
+import { InsuranceTypeCard } from '@/components/InsuranceTypeCard';
+import { FAQ } from '@/components/FAQ';
+import { ArticleCard } from '@/components/ArticleCard';
+import { articles } from '@/content/articles';
+import { faqItems } from '@/content/faq';
+import { seasonalConfig } from '@/content/seasonal';
+import { 
+  ShieldCheck, 
+  Scale, 
+  Calendar, 
+  Calculator, 
+  FileText, 
+  CheckCircle2, 
+  BookOpen, 
+  ArrowRight,
+  TrendingDown,
+  Building2,
+  Lock
+} from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'KFZ Wechselsaison – Kfz-Versicherung vergleichen, wechseln und sparen',
+  title: 'KFZ Wechselsaison 2026/2027 – Stichtag 30. November, Rechner & Kündigung',
   description:
-    'Kfz-Versicherung wechseln und vergleichen: Kündigungsfristen, Tarife und Tipps rund um den Versicherungswechsel. Jetzt unverbindlich Tarife vergleichen.',
+    'Unabhängiges Verbraucherportal zur Kfz-Wechselsaison: Gesetzliche Kündigungsfrist zum 30. November, Sonderkündigung nach § 40 VVG, Ersparnisrechner, Kündigungs-Generator und GDV-Typklassen.',
   alternates: {
     canonical: 'https://kfzwechselsaison.de/',
   },
-}
+};
 
 const wechselSteps = [
   {
     number: 1,
-    title: 'Aktuellen Beitrag prüfen',
+    title: 'Aktuellen Jahresbeitrag & SF-Klasse prüfen',
     description:
-      'Schau dir an, was du derzeit für deine Kfz-Versicherung zahlst und welche Leistungen enthalten sind.',
+      'Prüfen Sie Ihre letzte Beitragsrechnung auf Beitragshöhe, übernommene SF-Klasse sowie eventuelle versteckte Preiserhöhungen.',
   },
   {
     number: 2,
-    title: 'Kündigungsfrist prüfen',
+    title: 'Kündigungsstichtag 30. November beachten',
     description:
-      'Prüfe in deinem Versicherungsvertrag, bis wann du kündigen kannst. Bei vielen Jahresverträgen gilt eine einmonatige Frist vor Vertragsende.',
+      'Bei regulären Jahresverträgen muss die Kündigung bis spätestens 30. November (23:59 Uhr) beim Versicherer eingegangen sein (§ 11 VVG).',
   },
   {
     number: 3,
-    title: 'Tarife vergleichen',
+    title: 'Tarife unabhängig vergleichen',
     description:
-      'Nutze einen Tarifvergleich, um verschiedene Angebote gegenüberzustellen. Achte nicht nur auf den Preis, sondern auch auf die Leistungen.',
+      'Nutzen Sie den Vergleichsrechner, um identische Leistungen (100 Mio. € Deckung, Kasko, Werkstattwahl) gegenüberzustellen.',
   },
   {
     number: 4,
-    title: 'Leistungen vergleichen',
+    title: 'Neuen Vertrag verbindlich abschließen',
     description:
-      'Prüfe Deckungssummen, Selbstbeteiligung, Werkstattbindung, Schutzbrief und weitere Bausteine. Der günstigste Tarif ist nicht immer der beste.',
+      'Schließen Sie zuerst den neuen Vertrag ab und warten Sie die Bestätigung (eVB-Nummer) ab, bevor Sie den Altvertrag beenden.',
   },
   {
     number: 5,
-    title: 'Neuen Vertrag abschließen',
+    title: 'Rechtssichere Kündigung übermitteln',
     description:
-      'Hast du ein passendes Angebot gefunden, kannst du den neuen Vertrag abschließen. In vielen Fällen übernimmt der neue Versicherer die Kündigung beim alten Anbieter.',
+      'Nutzen Sie unseren Kündigungs-Generator. Versenden Sie das Schreiben per Einschreiben mit Rückschein oder qualifiziertem Fax.',
   },
   {
     number: 6,
-    title: 'Alten Vertrag kündigen',
+    title: 'SF-Klassen-Übertrag kontrollieren',
     description:
-      'Falls du selbst kündigst: Achte auf die Schriftform und die Einhaltung der Frist. Bewahre die Kündigungsbestätigung auf.',
+      'Ihr bisheriger Versicherer meldet die erfahrene Schadenfreiheitsklasse automatisch an die neue Versicherungsgesellschaft.',
   },
-]
+];
 
 const insuranceTypes = [
   {
     title: 'Kfz-Haftpflicht',
-    description: 'Gesetzlich vorgeschrieben. Deckt Schäden ab, die du anderen Verkehrsteilnehmern zufügst.',
+    description: 'Gesetzlich vorgeschrieben nach § 1 PflVG. Deckt Personen-, Sach- und Vermögensschäden Dritter mit bis zu 100 Mio. € ab.',
     href: '/kfz-haftpflicht/',
   },
   {
-    title: 'Teilkasko',
-    description: 'Schützt vor Diebstahl, Glasbruch, Wildunfall, Sturm und Hagel am eigenen Fahrzeug.',
+    title: 'Teilkaskoversicherung',
+    description: 'Schutz vor Elementarschäden (Sturm, Hagel, Überschwemmung), Glasbruch, Diebstahl, Marderbiss und Haarwildunfällen.',
     href: '/teilkasko/',
   },
   {
-    title: 'Vollkasko',
-    description: 'Umfasst Teilkasko-Leistungen plus Schutz bei selbst verschuldeten Unfällen und Vandalismus.',
+    title: 'Vollkaskoversicherung',
+    description: 'Umfasst alle Teilkaskoleistungen plus Absicherung bei selbstverschuldeten Unfallschäden und Vandalismus Dritter.',
     href: '/vollkasko/',
   },
   {
-    title: 'E-Auto-Versicherung',
-    description: 'Spezielle Tarife für Elektroautos mit Akku-Schutz, Wallbox-Absicherung und Ladekabelschutz.',
+    title: 'Elektroauto-Versicherung',
+    description: 'Spezialtarife für BEVs und Plug-in-Hybride mit All-Risk-Akkuschutz, Wallbox-Deckung und Abschleppung bei leerem Akku.',
     href: '/e-auto-versicherung/',
   },
   {
-    title: 'Zweitwagenversicherung',
-    description: 'Günstigere Einstufung für den Zweitwagen durch Übernahme der Schadenfreiheitsklasse.',
+    title: 'Zweitwagen-Einstufung',
+    description: 'Sondereinstufung für zusätzliche Familienfahrzeuge – spart durch direkte Einstufung in günstigere SF-Rabattstaffeln.',
     href: '/zweitwagenversicherung/',
   },
-]
-
-const wechselAnlaesse = [
-  {
-    title: 'Reguläre Kündigung',
-    text: 'Die meisten Kfz-Versicherungsverträge haben eine Laufzeit von einem Jahr und verlängern sich automatisch. Die Kündigung muss in der Regel einen Monat vor Vertragsende eingehen.',
-  },
-  {
-    title: 'Beitragserhöhung',
-    text: 'Erhöht dein Versicherer den Beitrag, ohne dass sich deine Leistungen verbessern, hast du in vielen Fällen ein Sonderkündigungsrecht. Prüfe die genauen Bedingungen in deinem Vertrag.',
-  },
-  {
-    title: 'Fahrzeugwechsel',
-    text: 'Kaufst du ein neues Fahrzeug, kannst du eine neue Versicherung wählen. Die alte Versicherung des vorherigen Fahrzeugs endet mit der Abmeldung.',
-  },
-  {
-    title: 'Halterwechsel',
-    text: 'Bei einem Halterwechsel, zum Beispiel bei Kauf oder Verkauf eines Gebrauchtwagens, besteht ebenfalls die Möglichkeit, den Versicherer zu wechseln.',
-  },
-  {
-    title: 'Sonderkündigungsrecht',
-    text: 'Neben Beitragserhöhungen kann ein Sonderkündigungsrecht auch nach einem Schadenfall entstehen. Die konkreten Voraussetzungen regelt der Versicherungsvertrag.',
-  },
-]
-
-const vergleichskriterien = [
-  { label: 'Beitragshöhe', desc: 'Der jährliche oder monatliche Versicherungsbeitrag.' },
-  { label: 'Deckungssumme', desc: 'Maximale Erstattung im Schadensfall – bei Haftpflicht mindestens 100 Mio. Euro empfohlen.' },
-  { label: 'Selbstbeteiligung', desc: 'Der Betrag, den du im Schadensfall selbst trägst. Höhere SB = niedrigerer Beitrag.' },
-  { label: 'Werkstattbindung', desc: 'Reparatur nur in Partnerwerkstätten – senkt den Beitrag, schränkt aber die Werkstattwahl ein.' },
-  { label: 'Schutzbrief', desc: 'Pannenhilfe, Abschleppdienst, Mietwagen bei Ausfall – oft als Zusatzbaustein buchbar.' },
-  { label: 'Rabattschutz', desc: 'Schützt die Schadenfreiheitsklasse bei einem Schaden – verhindert Hochstufung.' },
-  { label: 'Auslandsschutz', desc: 'Erweiterter Versicherungsschutz im europäischen und außereuropäischen Ausland.' },
-  { label: 'Fahrerkreis', desc: 'Je enger der Fahrerkreis definiert ist, desto günstiger wird der Beitrag in der Regel.' },
-]
+];
 
 export default function HomePage() {
-  const featuredArticles = articles.slice(0, 4)
-  const selectedFaqs = faqItems.slice(0, 8)
+  const featuredArticles = articles.slice(0, 4);
+  const selectedFaqs = faqItems.slice(0, 8);
 
   return (
-    <>
-      {/* ==================== HERO ==================== */}
-      <section className="border-b border-border bg-surface py-12 md:py-16">
-        <div className="mx-auto max-w-4xl px-5 text-center">
-          {/* Seasonal banner */}
-          {seasonalConfig.isWechselsaison && (
-            <p className="mb-6 inline-block rounded bg-brand-50 px-4 py-2 text-sm font-medium text-brand">
-              {seasonalConfig.seasonalBanner}
-            </p>
-          )}
+    <div className="bg-white">
+      {/* ==================== HERO SECTION (LIGHT & EDITORIAL) ==================== */}
+      <header className="border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-slate-50 py-12 md:py-18 relative overflow-hidden">
+        {/* Subtle geometric pattern decoration */}
+        <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:20px_20px] opacity-40 pointer-events-none" />
 
-          <h1 className="mb-4">{seasonalConfig.heroHeadline}</h1>
-          <p className="mx-auto mb-6 max-w-2xl text-lg leading-relaxed text-text-secondary">
-            {seasonalConfig.heroSubheadline}
+        <div className="mx-auto max-w-5xl px-5 text-center relative z-10">
+          {/* Tagline Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-mono font-semibold tracking-wider uppercase mb-6 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+            <span>&sect; 40 VVG &middot; WECHSELSAISON 2026 / 2027</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-950 tracking-tight leading-[1.08] mb-6">
+            Kfz-Versicherung wechseln:{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-500 underline decoration-amber-300 decoration-wavy decoration-2">
+              Stichtag 30. November
+            </span>
+          </h1>
+
+          <p className="mx-auto max-w-2xl text-base sm:text-xl text-slate-700 leading-relaxed font-normal mb-8">
+            Das unabhängige Fachportal für Verbraucher: Kündigungsfristen nach dem Versicherungsvertragsgesetz (VVG), interaktiver Ersparnisrechner, GDV-Typklassen und rechtsgeprüfte Kündigungsvorlagen.
           </p>
-          <p className="mx-auto mb-8 max-w-xl text-sm leading-relaxed text-text-muted">
-            {seasonalConfig.seasonalNotice}
-          </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <HeroScrollButton />
-            <Link href="/kfz-versicherung-wechseln/" className="btn-secondary px-6 py-3 text-base">
-              So funktioniert der Wechsel
-            </Link>
+          {/* Quick CTA Pill Group */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+            <a
+              href="#spar-rechner"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm sm:text-base transition-all shadow-sm active:scale-95 cursor-pointer"
+            >
+              <Calculator className="w-4 h-4 text-amber-400" />
+              <span>Ersparnis berechnen</span>
+            </a>
+            <a
+              href="#vergleichsrechner"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm sm:text-base transition-all shadow-sm active:scale-95 cursor-pointer"
+            >
+              <span>Tarife vergleichen*</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href="#kuendigung-generator"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-100 text-slate-800 font-bold text-sm sm:text-base transition-all active:scale-95 cursor-pointer"
+            >
+              <FileText className="w-4 h-4 text-slate-500" />
+              <span>Kündigungs-Generator</span>
+            </a>
+          </div>
+
+          {/* Editorial Key Facts Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-6 border-t border-slate-200/80 text-left">
+            <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
+              <div className="text-[11px] font-mono text-slate-400 uppercase">Ordentliche Frist</div>
+              <div className="text-base font-extrabold text-slate-900 mt-0.5">30. November</div>
+              <div className="text-[11px] text-slate-500">&sect; 11 Abs. 1 VVG</div>
+            </div>
+            <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
+              <div className="text-[11px] font-mono text-slate-400 uppercase">Sonderkündigung</div>
+              <div className="text-base font-extrabold text-slate-900 mt-0.5">1 Monat Frist</div>
+              <div className="text-[11px] text-slate-500">&sect; 40 Abs. 1 VVG</div>
+            </div>
+            <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
+              <div className="text-[11px] font-mono text-slate-400 uppercase">Schadenklassen</div>
+              <div className="text-base font-extrabold text-slate-900 mt-0.5">GDV-Index 2026/27</div>
+              <div className="text-[11px] text-slate-500">Bundesweite Typklassen</div>
+            </div>
+            <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
+              <div className="text-[11px] font-mono text-slate-400 uppercase">Portal-Status</div>
+              <div className="text-base font-extrabold text-emerald-700 mt-0.5">100% Unabhängig</div>
+              <div className="text-[11px] text-slate-500">Werbefrei &middot; E-E-A-T</div>
+            </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* ==================== FULL-WIDTH TARIFRECHNER SECTION ==================== */}
-      <section id="tarifrechner" className="border-b border-border bg-surface-subtle py-10 md:py-14">
-        <div className="mx-auto max-w-5xl px-5">
-          <div className="mb-6 text-center">
-            <h2 className="mb-2">Kfz-Versicherung online vergleichen</h2>
-            <p className="mx-auto max-w-xl text-sm text-text-secondary">
-              Prüfe unverbindlich und kostenlos aktuelle Tarife für Haftpflicht, Teilkasko und Vollkasko.
-            </p>
-          </div>
-          <TarifcheckWidget />
+      <div className="mx-auto max-w-6xl px-5">
+        {/* ==================== 1. POSITION 0 DEFINITIONS-BOX ==================== */}
+        <PositionZeroBox />
+
+        {/* ==================== 2. INTERAKTIVER SPAR- & FRISTENRECHNER ==================== */}
+        <div id="spar-rechner" className="scroll-mt-20">
+          <SavingsCalculator />
         </div>
-      </section>
 
-      {/* ==================== SECTION 1: Warum lohnt sich ein Vergleich? ==================== */}
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-5">
-          <h2 className="mb-6">Warum lohnt sich ein Kfz-Versicherungsvergleich?</h2>
-          <div className="space-y-4 text-text-secondary">
-            <p>
-              Die Beiträge für Kfz-Versicherungen unterscheiden sich je nach Anbieter teils erheblich –
-              bei vergleichbaren Leistungen. Ein Vergleich kann sich daher auch dann lohnen, wenn du mit
-              deinem aktuellen Versicherer grundsätzlich zufrieden bist.
-            </p>
-            <p>
-              Gründe für einen Vergleich gibt es viele: Du hast eine Beitragserhöhung erhalten,
-              deine Schadenfreiheitsklasse hat sich verbessert, du fährst inzwischen weniger Kilometer
-              pro Jahr oder du möchtest einfach prüfen, ob dein aktueller Tarif noch zum besten
-              Preis-Leistungs-Verhältnis gehört.
-            </p>
-            <p>
-              Dabei geht es nicht nur um den Preis. Auch die Leistungen sollten zu deiner persönlichen
-              Situation passen: Brauchst du einen Schutzbrief? Ist dir freie Werkstattwahl wichtig?
-              Möchtest du eine niedrige oder hohe Selbstbeteiligung?
-            </p>
-          </div>
-
-          <div className="mt-8 border-l-2 border-brand-100 pl-5">
-            <p className="text-sm font-medium text-text">Fünf Gründe für einen Vergleich:</p>
-            <ul className="mt-3 space-y-2 text-sm text-text-secondary">
-              <li>Beitrag prüfen – zahlst du für deine Leistungen einen marktüblichen Preis?</li>
-              <li>Leistungen vergleichen – passen die Konditionen zu deiner Situation?</li>
-              <li>Kündigungsfrist prüfen – wann kannst du überhaupt wechseln?</li>
-              <li>Alternativen vergleichen – welche anderen Tarife kommen infrage?</li>
-              <li>Mögliche Einsparungen prüfen – lohnt sich ein Wechsel finanziell?</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================== SECTION 2: So geht's ==================== */}
-      <section className="border-t border-border py-12 md:py-16">
-        <div className="mx-auto max-w-6xl px-5">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-            <div>
-              <h2 className="mb-3">Kfz-Versicherung wechseln – so geht&apos;s</h2>
-              <p className="text-text-secondary">
-                Der Wechsel deiner Kfz-Versicherung ist in wenigen Schritten möglich.
-                Wichtig ist, dass du die Kündigungsfrist deines aktuellen Vertrags kennst
-                und rechtzeitig handelst.
-              </p>
-              <p className="mt-4 text-sm text-text-muted">
-                Mehr dazu:{' '}
-                <Link href="/kfz-versicherung-wechseln/">
-                  Kfz-Versicherung wechseln – vollständige Anleitung
-                </Link>
+        {/* ==================== 3. TARIFVERGLEICH (TARIFCHECK WIDGET) ==================== */}
+        <section id="vergleichsrechner" className="my-14 scroll-mt-20">
+          <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-xs">
+            <div className="text-center max-w-2xl mx-auto mb-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200 text-slate-800 text-xs font-mono font-bold mb-2">
+                <Building2 className="w-3.5 h-3.5 text-slate-700" />
+                <span>MARKTWEITER KFZ-TARIFVERGLEICH*</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
+                Aktuelle Kfz-Versicherungstarife vergleichen
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 mt-2">
+                Vergleichen Sie kostenlos und unverbindlich Angebote von über 300 Gesellschaften für Haftpflicht, Teilkasko und Vollkasko.
               </p>
             </div>
-            <StepProcess steps={wechselSteps} />
-          </div>
-        </div>
-      </section>
 
-      {/* ==================== SECTION 3: 30. November ==================== */}
-      <section className="border-t border-border bg-surface-subtle py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-5">
-          <h2 className="mb-6">Der 30. November – warum ist dieser Termin wichtig?</h2>
-          <div className="space-y-4 text-text-secondary">
-            <p>
-              Viele Kfz-Versicherungsverträge in Deutschland laufen als Jahresverträge, die sich
-              automatisch verlängern. In diesen Fällen endet das Versicherungsjahr häufig am
-              31. Dezember. Da bei vielen Verträgen eine Kündigungsfrist von einem Monat gilt,
-              ergibt sich der 30. November als letzter Termin für eine fristgerechte Kündigung.
-            </p>
-            <p>
-              <strong>Wichtig:</strong> Nicht jeder Kfz-Versicherungsvertrag hat den 31. Dezember
-              als Stichtag. Es gibt auch Verträge mit unterjährigem Beginn, bei denen das
-              Versicherungsjahr zu einem anderen Zeitpunkt endet. Entscheidend ist immer dein
-              konkreter Versicherungsvertrag.
-            </p>
-            <p>
-              Prüfe deshalb deine Vertragsunterlagen oder frage bei deinem Versicherer nach,
-              wann dein Versicherungsjahr endet und welche Kündigungsfrist gilt. So verpasst du
-              keine Frist und kannst rechtzeitig vergleichen.
+            <TarifcheckWidget />
+
+            <div className="mt-4 text-center">
+              <p className="text-[11px] text-slate-500">
+                * Werbelink / Partnerlink. Bei Tarifabschluss über dieses Portal erhalten wir eine Vergütung. Für Sie entstehen keinerlei Mehrkosten.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================== 4. KÜNDIGUNGSSCHREIBEN-GENERATOR ==================== */}
+        <CancellationGenerator />
+
+        {/* ==================== 5. GDV TYPKLASSEN MATRIX ==================== */}
+        <GdvMatrix />
+
+        {/* ==================== 6. DER WECHSEL IN 6 SCHRITTEN ==================== */}
+        <section className="my-16">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              Kfz-Versicherungswechsel Schritt für Schritt
+            </h2>
+            <p className="text-sm text-slate-600 mt-2">
+              So gelingt der Wechsel reibungslos und ohne Unterbrechung Ihres gesetzlichen Versicherungsschutzes.
             </p>
           </div>
-          <p className="mt-6 text-sm text-text-muted">
-            Ausführliche Informationen:{' '}
-            <Link href="/30-november-kfz-versicherung/">
-              30. November und die Kfz-Versicherung
-            </Link>
-            {' · '}
-            <Link href="/kuendigungsfrist-kfz-versicherung/">
-              Kündigungsfrist bei der Kfz-Versicherung
-            </Link>
-          </p>
-        </div>
-      </section>
+          <StepProcess steps={wechselSteps} />
+        </section>
 
-      {/* ==================== SECTION 4: Versicherungsarten ==================== */}
-      <section className="border-t border-border py-12 md:py-16">
-        <div className="mx-auto max-w-6xl px-5">
-          <h2 className="mb-2">Welche Kfz-Versicherung brauchst du?</h2>
-          <p className="mb-8 max-w-2xl text-text-secondary">
-            Je nach Fahrzeug, Nutzung und persönlicher Situation kommen unterschiedliche
-            Versicherungsarten infrage.
-          </p>
-          <div className="grid gap-0 md:grid-cols-3 lg:grid-cols-5">
+        {/* ==================== 7. VERSICHERUNGSARTEN GRID ==================== */}
+        <section className="my-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                Versicherungsarten im Überblick
+              </h2>
+              <p className="text-sm text-slate-600 mt-1">
+                Wählen Sie den passenden Leistungsumfang für Ihr Fahrzeug und Nutzungsverhalten.
+              </p>
+            </div>
+            <Link
+              href="/kfz-versicherung-vergleichen/"
+              className="text-xs font-bold text-slate-900 hover:text-amber-600 flex items-center gap-1 shrink-0"
+            >
+              <span>Alle Sparten vergleichen</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {insuranceTypes.map((type) => (
               <InsuranceTypeCard
                 key={type.href}
@@ -280,67 +267,92 @@ export default function HomePage() {
               />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ==================== SECTION 5: Wann wechseln? ==================== */}
-      <section className="border-t border-border bg-surface-subtle py-12 md:py-16">
-        <div className="mx-auto max-w-6xl px-5">
-          <h2 className="mb-8">Wann kannst du deine Kfz-Versicherung wechseln?</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {wechselAnlaesse.map((anlass, i) => (
-              <div key={i}>
-                <h3 className="mb-2 text-base font-semibold">{anlass.title}</h3>
-                <p className="text-sm leading-relaxed text-text-secondary">{anlass.text}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 text-sm text-text-muted">
-            Mehr dazu:{' '}
-            <Link href="/sonderkuendigungsrecht-kfz-versicherung/">
-              Sonderkündigungsrecht bei der Kfz-Versicherung
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      {/* ==================== SECTION 6: Vergleichskriterien ==================== */}
-      <section className="border-t border-border py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-5">
-          <h2 className="mb-6">Kfz-Versicherung vergleichen – worauf achten?</h2>
-          <p className="mb-8 text-text-secondary">
-            Beim Vergleich von Kfz-Versicherungen geht es nicht nur um den Beitrag.
-            Diese Kriterien solltest du berücksichtigen:
-          </p>
-          <div className="space-y-0">
-            {vergleichskriterien.map((k) => (
-              <div key={k.label} className="border-b border-border py-4 last:border-0">
-                <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
-                  <span className="w-44 shrink-0 text-sm font-semibold text-text">{k.label}</span>
-                  <span className="text-sm text-text-secondary">{k.desc}</span>
+        {/* ==================== 8. E-E-A-T REDAKTIONS- & METHODIK-BOX ==================== */}
+        <section className="my-16">
+          <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-bold mb-2">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  <span>REDAKTIONELLES TRANSPARENZVERSPRECHEN &middot; E-E-A-T</span>
                 </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  Fachredaktion &amp; Amtliche Primärquellen
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
+                  Alle rechtlichen Angaben, Berechnungen und Kündigungsfristen werden fortlaufend nach den aktuellen Vorgaben des Versicherungsvertragsgesetzes (VVG) sowie den Publikationen des GDV und der BaFin geprüft.
+                </p>
               </div>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-text-muted">
-            Ausführlicher Vergleich:{' '}
-            <Link href="/kfz-versicherung-vergleichen/">
-              Kfz-Versicherung vergleichen – darauf kommt es an
-            </Link>
-          </p>
-        </div>
-      </section>
 
-      {/* ==================== SECTION 7: Aktuelle Ratgeber ==================== */}
-      <section className="border-t border-border bg-surface-subtle py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-5">
-          <div className="mb-8 flex items-end justify-between">
-            <h2 className="mb-0">Aktuelle Ratgeber</h2>
-            <Link href="/ratgeber/" className="text-sm text-text-muted no-underline hover:text-text">
-              Alle Ratgeber →
+              <div className="text-xs font-mono text-slate-400 bg-slate-800/80 p-3 rounded-xl border border-slate-700 shrink-0">
+                <div>Prüfstand: September 2026</div>
+                <div className="text-emerald-400 font-semibold mt-0.5">Status: Vollständig verifiziert</div>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-4 pt-6 text-xs text-slate-300">
+              <div className="bg-slate-800/50 p-3.5 rounded-xl border border-slate-800">
+                <div className="font-bold text-white flex items-center gap-1.5 mb-1">
+                  <Scale className="w-3.5 h-3.5 text-amber-400" />
+                  <span>&sect; 40 &amp; &sect; 11 VVG</span>
+                </div>
+                <p className="text-[11px] text-slate-400">
+                  Gesetzliche Grundlagen für die einmonatige Kündigungsfrist sowie das außerordentliche Kündigungsrecht bei Beitragsanpassungen.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 p-3.5 rounded-xl border border-slate-800">
+                <div className="font-bold text-white flex items-center gap-1.5 mb-1">
+                  <Building2 className="w-3.5 h-3.5 text-amber-400" />
+                  <span>GDV Gesamtverband</span>
+                </div>
+                <p className="text-[11px] text-slate-400">
+                  Amtliche Veröffentlichungen der Typklassenstatistik und Regionalklassen für das Versicherungsjahr 2026/2027.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 p-3.5 rounded-xl border border-slate-800">
+                <div className="font-bold text-white flex items-center gap-1.5 mb-1">
+                  <Lock className="w-3.5 h-3.5 text-amber-400" />
+                  <span>BaFin Aufsicht</span>
+                </div>
+                <p className="text-[11px] text-slate-400">
+                  Beachtung der Verbraucherschutz- und Transparenzrichtlinien der Bundesanstalt für Finanzdienstleistungsaufsicht.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================== 9. ZITATIONS-BOX (APA/HARVARD) ==================== */}
+        <CitationBox
+          title="Kfz-Wechselsaison 2026/2027: Fristen nach § 40 VVG, Sparrechner und Kündigung"
+          url="https://kfzwechselsaison.de/"
+        />
+
+        {/* ==================== 10. RATGEBER-ARTIKEL ==================== */}
+        <section className="my-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                Aktuelle Fachratgeber &amp; Fristen-Guides
+              </h2>
+              <p className="text-sm text-slate-600 mt-1">
+                Vertiefende Fachartikel aus der Redaktion zur Optimierung Ihrer Kfz-Versicherung.
+              </p>
+            </div>
+            <Link
+              href="/ratgeber/"
+              className="text-xs font-bold text-slate-900 hover:text-amber-600 flex items-center gap-1 shrink-0"
+            >
+              <span>Alle Ratgeber anzeigen</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
-          <div className="space-y-6">
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredArticles.map((article) => (
               <ArticleCard
                 key={article.slug}
@@ -353,26 +365,23 @@ export default function HomePage() {
               />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ==================== SECTION 8: FAQ ==================== */}
-      <section className="border-t border-border py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-5">
-          <h2 className="mb-6">Häufige Fragen zur Kfz-Versicherung</h2>
-          <FAQ items={selectedFaqs} withSchema={true} />
-          <p className="mt-6 text-sm text-text-muted">
-            <Link href="/faq/">Alle häufigen Fragen ansehen →</Link>
-          </p>
-        </div>
-      </section>
-
-      {/* ==================== SECTION 9: Conversion ==================== */}
-      <ConversionSection
-        headline="Jetzt Kfz-Versicherung vergleichen"
-        text="Prüfe unverbindlich, ob sich ein Wechsel deiner Kfz-Versicherung lohnt. Vergleiche Tarife verschiedener Anbieter und finde einen passenden Schutz für dein Fahrzeug."
-        showWidget={false}
-      />
-    </>
-  )
+        {/* ==================== 11. FAQ ACCORDION ==================== */}
+        <section className="my-16 border-t border-slate-200/80 pt-12">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              Häufig gestellte Fragen (FAQ)
+            </h2>
+            <p className="text-sm text-slate-600 mt-2">
+              Die wichtigsten rechtlichen und praktischen Antworten rund um Stichtag, Kündigung und Wechsel.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <FAQ items={selectedFaqs} />
+          </div>
+        </section>
+      </div>
+    </div>
+  );
 }

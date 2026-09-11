@@ -1,34 +1,35 @@
 @import "tailwindcss";
 
 /* ===========================
-   KFZ Wechselsaison – Design System
-   Seriös, schlicht, Verbraucherportal-Ästhetik
+   KFZ Wechselsaison – Design System (Anti-AI-Slop & Editorial Excellence)
+   100% DSGVO-konforme System Fonts (Zero Google Fonts CDN)
    =========================== */
 
 @theme {
-  --color-brand: #1B3A5C;
-  --color-brand-light: #244F7A;
-  --color-brand-dark: #122841;
-  --color-brand-50: #f0f4f8;
-  --color-brand-100: #d9e4ef;
+  --color-brand: #0f172a;
+  --color-brand-light: #1e293b;
+  --color-brand-dark: #020617;
+  --color-brand-50: #f8fafc;
+  --color-brand-100: #f1f5f9;
 
   --color-surface: #FFFFFF;
-  --color-surface-subtle: #F8F9FA;
-  --color-surface-muted: #F1F3F5;
+  --color-surface-subtle: #F8FAFC;
+  --color-surface-muted: #F1F5F9;
 
-  --color-text: #1A1A1A;
-  --color-text-secondary: #4A4A4A;
-  --color-text-muted: #6B7280;
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
   --color-text-inverse: #FFFFFF;
 
-  --color-border: #E5E7EB;
-  --color-border-subtle: #F0F0F0;
+  --color-border: #E2E8F0;
+  --color-border-subtle: #F1F5F9;
 
-  --color-accent: #1B3A5C;
-  --color-accent-hover: #244F7A;
+  --color-accent: #f59e0b;
+  --color-accent-hover: #d97706;
 
-  --font-serif: 'Source Serif 4', 'Georgia', serif;
-  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* Base resets */
@@ -42,168 +43,73 @@ body {
   font-family: var(--font-sans);
   color: var(--color-text);
   background-color: var(--color-surface);
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 /* Typography */
 h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  line-height: 1.25;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  line-height: 1.2;
   color: var(--color-text);
 }
 
 h1 {
   font-size: 2.25rem;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: 1.625rem;
-  letter-spacing: -0.01em;
-}
-
-h3 {
-  font-size: 1.25rem;
+  letter-spacing: -0.025em;
 }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 2.75rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-  h3 {
-    font-size: 1.375rem;
+    font-size: 3rem;
   }
 }
 
-/* Text Links (excl. buttons & badges) */
-a:not([class*="btn"]):not([class*="bg-brand"]):not([class*="bg-surface"]) {
-  color: var(--color-brand);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  transition: color 0.15s ease;
+h2 {
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
 }
 
-a:not([class*="btn"]):not([class*="bg-brand"]):not([class*="bg-surface"]):hover {
-  color: var(--color-brand-light);
+h3 {
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
-/* Button Utilities (Guarantees visible text in all states) */
-.btn-primary,
-button.btn-primary,
-a.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.25rem;
-  background-color: var(--color-brand);
-  color: #FFFFFF !important;
-  border: 1px solid var(--color-brand);
-  padding: 0.625rem 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration: none !important;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.btn-primary:hover,
-button.btn-primary:hover,
-a.btn-primary:hover {
-  background-color: var(--color-brand-light);
-  border-color: var(--color-brand-light);
-  color: #FFFFFF !important;
-}
-
-.btn-secondary,
-button.btn-secondary,
-a.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.25rem;
-  background-color: transparent;
-  color: var(--color-text) !important;
-  border: 1px solid var(--color-border);
-  padding: 0.625rem 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration: none !important;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.btn-secondary:hover,
-button.btn-secondary:hover,
-a.btn-secondary:hover {
-  background-color: var(--color-surface-muted);
-  border-color: var(--color-border);
-  color: var(--color-text) !important;
-}
-
-/* Focus states */
+/* Focus styles */
 :focus-visible {
-  outline: 2px solid var(--color-brand);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-/* Article content styling */
-.article-content p {
-  margin-bottom: 1.25em;
-}
+/* Print Styles for Legal Documents & A4 Clean Data Sheet */
+@media print {
+  header,
+  footer,
+  nav,
+  aside,
+  [data-no-print],
+  button {
+    display: none !important;
+  }
 
-.article-content ul,
-.article-content ol {
-  margin-bottom: 1.25em;
-  padding-left: 1.5em;
-}
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 
-.article-content li {
-  margin-bottom: 0.5em;
-}
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
 
-.article-content ul li {
-  list-style-type: disc;
-}
-
-.article-content ol li {
-  list-style-type: decimal;
-}
-
-.article-content strong {
-  font-weight: 600;
-}
-
-.article-content a {
-  text-decoration: underline;
-  color: var(--color-brand);
-}
-
-.article-content a:hover {
-  color: var(--color-brand-light);
-}
-
-.article-content h2 {
-  margin-top: 2.5em;
-  margin-bottom: 0.75em;
-}
-
-.article-content h3 {
-  margin-top: 1.75em;
-  margin-bottom: 0.5em;
-}
-
-/* Tarifrechner container */
-#tcpp-iframe-kfz {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-#tcpp-iframe-kfz iframe {
-  max-width: 100% !important;
+  .border,
+  .rounded-xl,
+  .rounded-2xl {
+    border: none !important;
+    box-shadow: none !important;
+  }
 }

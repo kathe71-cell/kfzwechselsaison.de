@@ -1,25 +1,25 @@
-import type { Metadata } from 'next'
-import { Breadcrumbs } from '@/components/Breadcrumbs'
+import type { Metadata } from 'next';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Impressum',
-  description: 'Rechtliche Angaben und Impressum von KFZ Wechselsaison.',
+  title: 'Impressum – Gesetzliche Anbieterkennzeichnung',
+  description: 'Rechtliche Angaben und Impressum nach § 5 DDG von KFZ Wechselsaison.',
   robots: {
     index: false,
-    follow: false,
+    follow: true,
   },
-}
+};
 
 export default function ImpressumPage() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-8 md:py-12">
       <Breadcrumbs items={[{ label: 'Startseite', href: '/' }, { label: 'Impressum' }]} />
 
-      <h1 className="mb-6 mt-4">Impressum</h1>
+      <h1 className="mb-6 mt-4 text-3xl font-extrabold text-slate-900 tracking-tight">Impressum</h1>
 
-      <div className="space-y-6 text-text-secondary">
-        <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">Angaben gemäß § 5 DDG</h2>
+      <div className="space-y-6 text-slate-700 leading-relaxed text-sm">
+        <section className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+          <h2 className="mb-3 text-lg font-bold text-slate-900">Angaben gemäß § 5 DDG</h2>
           <p>
             Jens Kathe<br />
             Hansastraße 6<br />
@@ -28,15 +28,30 @@ export default function ImpressumPage() {
           </p>
         </section>
 
-        <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">Kontakt</h2>
+        <section className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+          <h2 className="mb-3 text-lg font-bold text-slate-900">Kontakt</h2>
           <p>
-            E-Mail: domain@kathe.org
+            E-Mail:{' '}
+            <a href="mailto:jens@kathe.org" className="font-semibold text-slate-900 underline hover:text-amber-600">
+              jens@kathe.org
+            </a>
+            <br />
+            Telefon:{' '}
+            <a href="tel:+491786652623" className="font-semibold text-slate-900 underline hover:text-amber-600">
+              +49 178 6652623
+            </a>
           </p>
         </section>
 
-        <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+        <section className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+          <h2 className="mb-3 text-lg font-bold text-slate-900">Umsatzsteuer &amp; Kleinunternehmerstatus</h2>
+          <p>
+            Als Kleinunternehmer im Sinne von <strong>§ 19 Abs. 1 UStG</strong> wird keine Umsatzsteuer berechnet und ausgewiesen.
+          </p>
+        </section>
+
+        <section className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+          <h2 className="mb-3 text-lg font-bold text-slate-900">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
           <p>
             Jens Kathe<br />
             Hansastraße 6<br />
@@ -45,56 +60,28 @@ export default function ImpressumPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">Wichtiger rechtlicher Hinweis / Beratungsausschluss</h2>
-          <p>
-            KFZ Wechselsaison ist ein unabhängiges Informations- und Verbraucherportal. Wir bieten keine individuelle Versicherungsvermittlung, Rechts- oder Steuerberatung an. Die bereitgestellten Informationen dienen ausschließlich der allgemeinen Orientierung. Ein Versicherungsvertrag kommt erst durch den Abschluss bei dem jeweiligen Versicherungsunternehmen zustande.
+          <h2 className="mb-2 text-base font-bold text-slate-900">Wichtiger rechtlicher Hinweis / Unabhängiges Portal</h2>
+          <p className="text-slate-600 text-xs">
+            KFZ Wechselsaison (kfzwechselsaison.de) ist ein unabhängiges Verbraucher- und Informationsportal. Wir erbringen keine Rechts-, Steuer- oder individuelle Versicherungsberatung und treten nicht als Versicherungsvermittler oder Makler auf. Die Inhalte dienen der allgemeinen Verbraucheraufklärung. Ein Versicherungsvertrag kommt ausschließlich direkt zwischen dem Nutzer und dem jeweiligen Versicherungsunternehmen zustande.
           </p>
         </section>
 
         <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">Haftung für Inhalte</h2>
-          <p>
-            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-          </p>
-          <p className="mt-2">
-            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">Haftung für Links</h2>
-          <p>
-            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
-          </p>
-          <p className="mt-2">
-            Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">Urheberrecht</h2>
-          <p>
-            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">EU-Streitschlichtung</h2>
-          <p>
+          <h2 className="mb-2 text-base font-bold text-slate-900">EU-Streitschlichtung</h2>
+          <p className="text-slate-600 text-xs">
             Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
             <a
               href="https://ec.europa.eu/consumers/odr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline"
+              className="underline text-slate-900"
             >
               https://ec.europa.eu/consumers/odr/
             </a>.
-            <br />
-            Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
           </p>
         </section>
       </div>
     </div>
-  )
+  );
 }

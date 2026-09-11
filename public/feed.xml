@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KFZ Wechselsaison – Ratgeber &amp; Fristen-Updates</title>
+    <link>https://kfzwechselsaison.de</link>
+    <description>Aktuelle Informationen zu Kfz-Versicherungswechsel, Kündigungsfristen zum 30. November, GDV-Typklassen und Sparpotenzialen.</description>
+    <language>de-DE</language>
+    <lastBuildDate>Fri, 11 Sep 2026 12:00:00 +0200</lastBuildDate>
+    <atom:link href="https://kfzwechselsaison.de/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kfz-Wechselsaison 2026/2027: Stichtag 30. November und Fristen</title>
+      <link>https://kfzwechselsaison.de/30-november-kfz-versicherung</link>
+      <guid>https://kfzwechselsaison.de/30-november-kfz-versicherung</guid>
+      <pubDate>Fri, 11 Sep 2026 10:00:00 +0200</pubDate>
+      <description>Alles zur einmonatigen Kündigungsfrist zum Jahresende nach § 11 VVG und wie Fahrzeughalter rechtssicher kündigen.</description>
+    </item>
+    <item>
+      <title>Sonderkündigungsrecht nach § 40 VVG bei Beitragserhöhung</title>
+      <link>https://kfzwechselsaison.de/sonderkuendigungsrecht-kfz-versicherung</link>
+      <guid>https://kfzwechselsaison.de/sonderkuendigungsrecht-kfz-versicherung</guid>
+      <pubDate>Fri, 11 Sep 2026 09:30:00 +0200</pubDate>
+      <description>Wann ein außerordentliches Kündigungsrecht besteht, welche Fristen gelten und wie Sie Musterkündigungen verfassen.</description>
+    </item>
+    <item>
+      <title>GDV Typklassen &amp; Regionalklassen 2026/2027 im Überblick</title>
+      <link>https://kfzwechselsaison.de/ratgeber/typklassen-regionalklassen-verstehen</link>
+      <guid>https://kfzwechselsaison.de/ratgeber/typklassen-regionalklassen-verstehen</guid>
+      <pubDate>Thu, 10 Sep 2026 14:00:00 +0200</pubDate>
+      <description>Wie sich die jährliche GDV-Neueinstufung auf Ihren Beitrag auswirkt und welche Modelle teurer oder günstiger werden.</description>
+    </item>
+  </channel>
+</rss>

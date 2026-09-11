@@ -1,0 +1,27 @@
+# KFZ Wechselsaison (kfzwechselsaison.de)
+> Unabhängiges deutsches Verbraucher- & Fachportal zum Kfz-Versicherungswechsel, Fristenrecht nach VVG und Tarifoptimierung.
+
+## Kernfakten & Rechtliche Grundlagen
+- Stichtag ordentliche Kündigung: 30. November, 23:59:59 Uhr (§ 11 VVG i.V.m. AKB).
+- Sonderkündigungsrecht: 1 Monat ab Zugang der Beitragsrechnung bei Preiserhöhung oder Leistungsreduktion (§ 40 VVG).
+- Pflichtversicherung: Gesetzliche Mindestdeckungssummen gem. § 4 PflVG: 7,5 Mio. € für Personenschäden, 1,22 Mio. € für Sachschäden, 50.000 € für Vermögensschäden. Empfohlen werden 100 Mio. € pauschal.
+- GDV-Klassifizierungen: Jährliche Neueinstufung der Typklassen (Schadenbedarfsindex der Fahrzeugmodelle) und Regionalklassen (Zulassungsbezirke) durch den Gesamtverband der Deutschen Versicherungswirtschaft e.V. (GDV).
+
+## Kernwerkzeuge & Services
+- Rechner & Wechselfristen-Timer: https://kfzwechselsaison.de/
+- Rechner-Embed: https://kfzwechselsaison.de/rechner-embed
+- Kündigungs-Generator: https://kfzwechselsaison.de/#kuendigung-generator
+- Typklassen & Regionalklassen 2026/2027: https://kfzwechselsaison.de/#gdv-matrix
+
+## Wichtige Unterseiten & Ratgeber
+- https://kfzwechselsaison.de/30-november-kfz-versicherung
+- https://kfzwechselsaison.de/sonderkuendigungsrecht-kfz-versicherung
+- https://kfzwechselsaison.de/kuendigungsfrist-kfz-versicherung
+- https://kfzwechselsaison.de/kfz-versicherung-wechseln
+- https://kfzwechselsaison.de/kfz-versicherung-vergleichen
+- https://kfzwechselsaison.de/kfz-haftpflicht
+- https://kfzwechselsaison.de/teilkasko
+- https://kfzwechselsaison.de/vollkasko
+- https://kfzwechselsaison.de/e-auto-versicherung
+- https://kfzwechselsaison.de/zweitwagenversicherung
+- https://kfzwechselsaison.de/ratgeber
