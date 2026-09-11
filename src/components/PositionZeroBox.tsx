@@ -15,7 +15,7 @@ export default function PositionZeroBox() {
           </div>
           <div className="text-xs font-mono text-slate-500 flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>Geprüft nach § 11 &amp; § 40 VVG (Stand: 2026)</span>
+            <span>Geprüft nach § 11 &amp; § 40 VVG</span>
           </div>
         </div>
 

@@ -13,7 +13,7 @@ export default function CitationBox({
   url = 'https://kfzwechselsaison.de/'
 }: CitationBoxProps) {
   const [copied, setCopied] = useState<boolean>(false);
-  const citationText = `Fachredaktion kfzwechselsaison.de (2026). ${title}. Abgerufen von ${url} (Stand: September 2026).`;
+  const citationText = `Fachredaktion kfzwechselsaison.de (2026). ${title}. Abgerufen von ${url} (Wechselsaison 2026/2027).`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(citationText).then(() => {

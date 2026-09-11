@@ -26,7 +26,7 @@ export default function RechnerEmbedPage() {
           >
             kfzwechselsaison.de
           </a>{' '}
-          &middot; Stand: September 2026
+          &middot; Wechselsaison 2026/2027
         </div>
       </div>
     </main>

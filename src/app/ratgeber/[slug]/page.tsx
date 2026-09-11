@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { articles } from '@/content/articles'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
-import { UpdateDate } from '@/components/UpdateDate'
 import { TableOfContents } from '@/components/TableOfContents'
 import { ConversionSection } from '@/components/ConversionSection'
 
@@ -100,11 +99,6 @@ export default async function ArticlePage({
 
         <header className="mb-8">
           <h1 className="mb-3">{article.title}</h1>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-text-muted">
-            <UpdateDate date={article.updatedAt} />
-            <span>·</span>
-            <span>{article.readingTime} Min. Lesezeit</span>
-          </div>
         </header>
 
         {/* Pillar page reference */}

@@ -287,7 +287,7 @@ export default function HomePage() {
               </div>
 
               <div className="text-xs font-mono text-slate-400 bg-slate-800/80 p-3 rounded-xl border border-slate-700 shrink-0">
-                <div>Prüfstand: September 2026</div>
+                <div>Prüfstand: Wechselsaison 2026/2027</div>
                 <div className="text-emerald-400 font-semibold mt-0.5">Status: Vollständig verifiziert</div>
               </div>
             </div>
