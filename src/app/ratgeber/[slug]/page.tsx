@@ -115,16 +115,26 @@ export default async function ArticlePage({
         {tocItems.length > 3 && <TableOfContents items={tocItems} />}
 
         {/* Article content */}
-        <div className="article-content">
+        <div className="article-content max-w-none">
           {article.content.map((section, index) => (
-            <section key={index} id={`section-${index}`}>
-              <h2>{section.heading}</h2>
-              <div dangerouslySetInnerHTML={{ __html: section.content }} />
+            <section key={index} id={`section-${index}`} className="mb-12">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-10 mb-4 tracking-tight">
+                {section.heading}
+              </h2>
+              <div
+                className="space-y-4 text-slate-700 leading-relaxed text-base sm:text-lg"
+                dangerouslySetInnerHTML={{ __html: section.content }}
+              />
 
               {section.subSections?.map((sub, subIndex) => (
-                <div key={subIndex}>
-                  <h3>{sub.heading}</h3>
-                  <div dangerouslySetInnerHTML={{ __html: sub.content }} />
+                <div key={subIndex} className="mt-8">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mt-6 mb-3 tracking-tight">
+                    {sub.heading}
+                  </h3>
+                  <div
+                    className="space-y-4 text-slate-700 leading-relaxed text-base sm:text-lg"
+                    dangerouslySetInnerHTML={{ __html: sub.content }}
+                  />
                 </div>
               ))}
             </section>
