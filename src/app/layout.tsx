@@ -5,6 +5,7 @@ import { CookieConsentProvider } from '@/components/CookieConsentProvider';
 import { CookieConsent } from '@/components/CookieConsent';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 import SpeculationRules from '@/components/SpeculationRules';
 import './globals.css';
 
@@ -117,6 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <ScrollToTop />
           <CookieConsent />
         </CookieConsentProvider>
         <Analytics />
