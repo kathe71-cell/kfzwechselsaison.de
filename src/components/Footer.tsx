@@ -2,11 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { useCookieConsent } from './CookieConsentProvider';
 import { ShieldCheck, Scale, ArrowRight, Code } from 'lucide-react';
 
 export function Footer() {
-  const { openSettings } = useCookieConsent();
 
   return (
     <footer className="border-t border-slate-800 bg-slate-950 text-slate-300">
@@ -118,13 +116,6 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button
-              type="button"
-              onClick={openSettings}
-              className="text-slate-300 hover:text-white underline cursor-pointer"
-            >
-              Cookie-Einstellungen
-            </button>
             <span>&copy; {new Date().getFullYear()} KFZ Wechselsaison</span>
           </div>
         </div>

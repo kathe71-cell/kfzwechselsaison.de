@@ -72,40 +72,29 @@ export default function DatenschutzPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">5. Cookies &amp; Speichertechnologien (TDDDG &amp; DSGVO)</h2>
+          <h2 className="mb-2 text-xl font-semibold text-text">5. Verzicht auf einwilligungspflichtige Tracking-Cookies</h2>
           <p>
-            Unsere Website verwendet Cookies und lokale Speicherelemente (localStorage) gemäß § 25 TDDDG (Telekommunikation-Digitale-Dienste-Datenschutz-Gesetz) und Art. 6 DSGVO.
-          </p>
-          <ul className="my-3 space-y-2 pl-5">
-            <li className="list-disc">
-              <strong className="text-text">Notwendige Speicherungen:</strong> Technisch erforderlich, um Ihre Cookie-Einstellungen im Browser lokal zu speichern (localStorage Key: <code className="bg-surface-subtle px-1 py-0.5 rounded">kfzws-cookie-consent</code>). Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG, Art. 6 Abs. 1 lit. f DSGVO.
-            </li>
-            <li className="list-disc">
-              <strong className="text-text">Marketing &amp; Tarifvergleich:</strong> Die Einbindung des externen Tarifrechners erfordert Ihre ausdrückliche Einwilligung. Rechtsgrundlage: § 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO.
-            </li>
-          </ul>
-          <p className="mt-3 rounded bg-surface-subtle p-4 text-sm">
-            <strong className="text-text">Widerruf der Einwilligung:</strong> Sie können Ihre erteilten Einwilligungen jederzeit für die Zukunft anpassen oder widerrufen. Klicken Sie dazu im Footer der Seite auf den Link <span className="font-medium text-brand">„Cookie-Einstellungen“</span>.
+            Unsere Website verzichtet bewusst auf Tracking-Cookies, Werbenetzwerk-Pixel (wie z. B. Meta Pixel oder Google Ads) und externe Schriftarten-CDNs. Beim reinen Besuch unserer redaktionellen Seiten werden keine Cookies auf Ihrem Endgerät gespeichert.
           </p>
         </section>
 
         <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">6. Vercel Analytics (Cookieless)</h2>
+          <h2 className="mb-2 text-xl font-semibold text-text">6. Vercel Web Analytics &amp; Speed Insights (Cookieless)</h2>
           <p>
-            Wir nutzen Vercel Analytics zur anonymisierten statistischen Auswertung von Seitenaufrufen und zur Gewährleistung der Leistungsfähigkeit unserer Website (Speed Insights). Vercel Analytics arbeitet vollständig <strong>cookieless</strong> und ohne Erfassung personenbezogener IP-Adressen oder Identifikatoren.
+            Wir nutzen Vercel Analytics zur anonymisierten statistischen Auswertung von Seitenaufrufen und zur Gewährleistung der Leistungsfähigkeit unserer Website. Vercel Analytics arbeitet vollständig <strong>cookieless</strong> und ohne Erfassung personenbezogener IP-Adressen oder persistenter Nutzer-Profile.
           </p>
           <p className="mt-2">
-            Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der bedarfsgerechten Optimierung unseres Online-Angebots.
+            Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der bedarfsgerechten Optimierung und Systemsicherheit unseres Online-Angebots).
           </p>
         </section>
 
         <section>
-          <h2 className="mb-2 text-xl font-semibold text-text">7. Einbindung des externen Tarifrechners (Tarifcheck)</h2>
+          <h2 className="mb-2 text-xl font-semibold text-text">7. Einbindung des Kfz-Tarifrechners (Tarifcheck / partner-versicherung.de)</h2>
           <p>
-            Sofern Sie der Kategorie „Marketing / Tarifvergleich“ zugestimmt haben, wird auf unserer Website das Vergleichs-Widget von <strong>partner-versicherung.de</strong> eingebunden. Bei der Nutzung des Rechners übermitteln Sie eingegebene Daten (z. B. Fahrzeugdaten, Zulassungsbezirk, Fahrleistung, Angaben zum Versicherungsschutz) an den Betreiber des Tarifrechners, um Angebote zu berechnen.
+            Zur Bereitstellung des kostenlosen Tarifvergleichs ist auf ausgewählten Unterseiten das Kfz-Vergleichsmodul von <strong>partner-versicherung.de</strong> (Tarifcheck) eingebunden.
           </p>
           <p className="mt-2">
-            Die Datenübertragung und Berechnung erfolgt direkt durch den Betreiber des Tarifrechners. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung) bzw. Art. 6 Abs. 1 lit. b DSGVO zur Durchführung vorvertraglicher Anfragen.
+            Wenn Sie den Rechner nutzen und Fahrzeug- oder Tarifdaten eingeben, werden diese zwecks Berechnung von Vergleichsangeboten an den Betreiber des Vergleichsrechners übermittelt. Rechtsgrundlage für die Bereitstellung des Vergleichsdienstes und die Verarbeitung der von Ihnen eingegebenen Daten ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen auf Anfrage des Nutzers) sowie Art. 6 Abs. 1 lit. f DSGVO.
           </p>
         </section>
       </div>

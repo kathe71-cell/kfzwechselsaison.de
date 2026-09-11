@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { CookieConsentProvider } from '@/components/CookieConsentProvider';
-import { CookieConsent } from '@/components/CookieConsent';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -114,13 +112,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="flex min-h-screen flex-col bg-white text-slate-900 selection:bg-amber-100 selection:text-amber-950">
-        <CookieConsentProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <ScrollToTop />
-          <CookieConsent />
-        </CookieConsentProvider>
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <ScrollToTop />
         <Analytics />
         <SpeedInsights />
       </body>
