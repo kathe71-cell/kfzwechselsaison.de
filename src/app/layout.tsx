@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     shortcut: ['/favicon.ico?v=3'],
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || 'google-site-verification-kfzwechselsaison',
+    google: 'CTgEUyBVexYJgntjsISgbvQ9t6fPlWxklcf4SqLm2Ps',
   },
 };
 
@@ -102,6 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de">
       <head>
+        <meta name="google-site-verification" content="CTgEUyBVexYJgntjsISgbvQ9t6fPlWxklcf4SqLm2Ps" />
         <link rel="alternate" type="application/rss+xml" title="KFZ Wechselsaison RSS Feed" href="/feed.xml" />
         <SpeculationRules />
         <script
