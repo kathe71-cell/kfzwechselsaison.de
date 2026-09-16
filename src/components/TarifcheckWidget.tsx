@@ -5,7 +5,7 @@ import { AffiliateDisclosure } from './AffiliateDisclosure'
 import { ShieldCheck, Loader2, ExternalLink, AlertCircle } from 'lucide-react'
 
 const SCRIPT_URL = 'https://form.partner-versicherung.de/widgets/72057/tcpp-iframe-kfz/kfz-iframe.js'
-const DIRECT_PARTNER_URL = 'https://form.partner-versicherung.de/widgets/72057/tcpp-iframe-kfz/'
+const DIRECT_PARTNER_URL = 'https://a.partner-versicherung.de/click.php?partner_id=72057&app_id=2'
 
 export function TarifcheckWidget() {
   const [iframeLoaded, setIframeLoaded] = useState(false)

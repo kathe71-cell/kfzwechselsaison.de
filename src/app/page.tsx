@@ -170,9 +170,9 @@ export default function HomePage() {
               <div className="text-[11px] text-slate-500">&sect; 40 Abs. 1 VVG</div>
             </div>
             <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
-              <div className="text-[11px] font-mono text-slate-400 uppercase">Schadenklassen</div>
-              <div className="text-base font-extrabold text-slate-900 mt-0.5">GDV-Index 2026/27</div>
-              <div className="text-[11px] text-slate-500">Bundesweite Typklassen</div>
+              <div className="text-[11px] font-mono text-slate-400 uppercase">Typklassen</div>
+              <div className="text-base font-extrabold text-slate-900 mt-0.5">Typklassen verstehen</div>
+              <div className="text-[11px] text-slate-500">KH, TK &amp; VK Systematik</div>
             </div>
             <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
               <div className="text-[11px] font-mono text-slate-400 uppercase">Portal-Status</div>
@@ -325,12 +325,12 @@ export default function HomePage() {
                   </p>
                 </div>
                 <a
-                  href="https://www.gdv.de/gdv/themen/schaden-unfall/typklassenabfrage-104938"
+                  href="https://www.dieversicherer.de/versicherer/auto/typklassenabfrage"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 font-mono text-[11px] mt-3 hover:underline"
                 >
-                  <span>GDV Typklassenabfrage</span>
+                  <span>Typklassenabfrage (Die Versicherer)</span>
                   <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
@@ -342,18 +342,13 @@ export default function HomePage() {
                     <span>BaFin Finanzaufsicht</span>
                   </div>
                   <p className="text-[11px] text-slate-400 leading-relaxed">
-                    Verbraucherschutzhinweise und Aufsichtsgrundsätze der Bundesanstalt für Finanzdienstleistungsaufsicht zu Kfz-Versicherungsverträgen.
+                    Aufsichtsgrundsätze und Marktbeobachtung der Bundesanstalt für Finanzdienstleistungsaufsicht zu den Rechten von Versicherungsnehmern.
                   </p>
                 </div>
-                <a
-                  href="https://www.bafin.de/DE/Verbraucher/Finanzwissen/Versicherungen/Kfz/kfz_node.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 font-mono text-[11px] mt-3 hover:underline"
-                >
-                  <span>Verbraucherinfo BaFin</span>
-                  <ArrowRight className="w-3 h-3" />
-                </a>
+                <div className="text-[11px] font-mono text-slate-500 mt-3 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
+                  <span>Behördliche Aufsicht (bafin.de)</span>
+                </div>
               </div>
             </div>
           </div>

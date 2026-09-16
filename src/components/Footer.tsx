@@ -65,7 +65,7 @@ export function Footer() {
               <li><Link href="/kfz-versicherung-wechseln/" className="hover:text-white transition-colors">Kfz-Versicherung wechseln</Link></li>
               <li><Link href="/kfz-versicherung-vergleichen/" className="hover:text-white transition-colors">Tarife objektiv vergleichen</Link></li>
               <li><Link href="/#spar-rechner" className="hover:text-white transition-colors font-semibold text-slate-200">Ersparnis- &amp; Fristenrechner</Link></li>
-              <li><Link href="/#gdv-matrix" className="hover:text-white transition-colors">GDV-Typklassen 2026/2027</Link></li>
+              <li><Link href="/#gdv-matrix" className="hover:text-white transition-colors">Typklassen verstehen</Link></li>
               <li><Link href="/kfz-versicherung-2027/" className="hover:text-white transition-colors">Ausblick Beitragsjahr 2027</Link></li>
             </ul>
           </div>

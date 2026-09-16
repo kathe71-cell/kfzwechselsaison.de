@@ -50,7 +50,7 @@ export default function GdvMatrix() {
               Typklassen-Explorer: Modellhafte Referenzwerte
             </h2>
             <div className="text-xs sm:text-sm font-medium text-slate-700 bg-amber-50/80 border border-amber-200/70 rounded-lg p-3 mt-2 leading-relaxed">
-              <strong>Hinweis zur Datenbasis:</strong> Illustrative Beispiele – keine verifizierte GDV-Jahresstatistik. Die untenstehenden Werte veranschaulichen die Funktionsweise der Typklassen-Systematik (KH 10–25, TK 10–33, VK 10–34). Die verbindliche Einstufung Ihres Fahrzeugs ermittelt der GDV bzw. Ihr Versicherer anhand der vollständigen HSN/TSN.
+              <strong>Hinweis zur Datenbasis:</strong> Illustrative Beispiele – keine verifizierte GDV-Jahresstatistik. Die untenstehenden Werte veranschaulichen die Funktionsweise der Typklassen-Systematik (KH 10–25, TK 10–33, VK 10–34). Der GDV veröffentlicht unverbindliche Typklassen; maßgeblich ist die Einstufung Ihres Versicherers anhand der vollständigen HSN/TSN.
             </div>
           </div>
 
@@ -142,16 +142,16 @@ export default function GdvMatrix() {
           <div className="flex items-start gap-2">
             <Info className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
-              <strong>Methodischer und institutioneller Hinweis:</strong> Illustrative Beispiele – keine verifizierte GDV-Jahresstatistik. Der Gesamtverband der Deutschen Versicherungswirtschaft e.V. (GDV) ist ein privatrechtlicher Branchenverband und <em>keine staatliche Behörde</em>. Für die verbindliche und aktuelle Einstufung Ihres Fahrzeugs nutzen Sie bitte die offizielle Verbandsabfrage:
+              <strong>Methodischer und institutioneller Hinweis:</strong> Illustrative Beispiele – keine verifizierte GDV-Jahresstatistik. Der Gesamtverband der Deutschen Versicherungswirtschaft e.V. (GDV) ist ein privatrechtlicher Branchenverband und <em>keine staatliche Behörde</em>. Der GDV veröffentlicht unverbindliche Typklassen; maßgeblich ist die Einstufung Ihres Versicherers. Für die Verbandsabfrage unverbindlicher Typklassen nutzen Sie bitte das Verbraucherportal der Versicherungswirtschaft:
             </p>
           </div>
           <a
-            href="https://www.gdv.de/gdv/themen/schaden-unfall/typklassenabfrage-104938"
+            href="https://www.dieversicherer.de/versicherer/auto/typklassenabfrage"
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs border border-slate-300 transition-colors"
           >
-            <span>GDV-Typklassenabfrage</span>
+            <span>Typklassenabfrage (Die Versicherer)</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
