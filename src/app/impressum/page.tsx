@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+  alternates: {
+    canonical: 'https://kfzwechselsaison.de/impressum/',
+  },
 };
 
 export default function ImpressumPage() {

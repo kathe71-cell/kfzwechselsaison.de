@@ -10,27 +10,27 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: 'Wie lang ist die Kündigungsfrist bei der Kfz-Versicherung?',
-    answer: 'Die reguläre Kündigungsfrist bei Kfz-Versicherungen beträgt fast immer einen Monat zum Ende des Versicherungsjahres. Bei Verträgen, bei denen das Versicherungsjahr dem Kalenderjahr entspricht, muss die Kündigung spätestens Ende November beim Versicherer eingegangen sein. Die genauen Bedingungen finden Sie in Ihrer Police.'
+    answer: 'Nach § 11 Abs. 1 VVG beträgt die Kündigungsfrist bei der Kfz-Versicherung einen Monat zum Ende des jeweiligen Versicherungsjahres. Endet das Versicherungsjahr wie bei vielen Verträgen am 31. Dezember, muss das Kündigungsschreiben spätestens am 30. November (23:59 Uhr) beim Versicherer vorliegen. Bei abweichenden oder unterjährigen Laufzeiten verschiebt sich die Frist auf einen Monat vor dem individuellen Ablaufdatum.'
   },
   {
     question: 'Muss jeder Vertrag bis zum 30. November gekündigt werden?',
-    answer: 'Nein, das gilt nicht für alle Verträge. Der Stichtag 30. November betrifft nur Versicherungen, deren Versicherungsjahr mit dem Kalenderjahr übereinstimmt und am 31. Dezember endet. Immer mehr Versicherer bieten unterjährige Verträge an, die beispielsweise an dem Tag beginnen und enden, an dem das Auto zugelassen wurde. Prüfen Sie daher immer die genauen Laufzeiten in Ihren Vertragsunterlagen.'
+    answer: 'Nein. Der Stichtag 30. November gilt nur für Policen, deren Versicherungsjahr mit dem Kalenderjahr übereinstimmt und am 31. Dezember endet. Bei Verträgen mit unterjähriger Laufzeit (beispielsweise Beginn und Ablauf jeweils zum Zulassungsdatum, etwa 1. Mai bis 30. April) muss die Kündigung einen Monat vor diesem Ablaufdatum eingehen (im Beispiel bis 31. März). Prüfen Sie daher stets das Ablaufdatum in Ihrem Versicherungsschein.'
   },
   {
     question: 'Wie läuft die Kündigung der Kfz-Versicherung ab?',
-    answer: 'Eine Kündigung sollte in Textform erfolgen, zum Beispiel per E-Mail, Fax oder Brief. Viele Versicherer bieten mittlerweile auch eine Kündigung über das Kundenportal auf ihrer Website an. Wichtig ist, dass Sie sich den Eingang der Kündigung bestätigen lassen, um einen Nachweis zu haben.'
+    answer: 'Für seit dem 1. Oktober 2016 geschlossene Verträge genügt nach § 126b BGB die Textform (z. B. E-Mail, Fax oder Kundenportal). Ältere Verträge können noch die Schriftform mit eigenhändiger Unterschrift verlangen. Wichtig ist stets der Nachweis des rechtzeitigen Zugangs (z. B. qualifizierter Sendebericht beim Fax oder Einschreiben).'
   },
   {
     question: 'Sollte ich eine Teilkasko oder Vollkasko wählen?',
-    answer: 'Die gesetzliche Haftpflicht ist verpflichtend, Kaskoversicherungen sind freiwillige Zusatzleistungen. Eine Vollkasko empfiehlt sich in der Regel für Neuwagen und Fahrzeuge bis zu einem Alter von etwa drei bis fünf Jahren, da sie auch selbst verschuldete Schäden abdeckt. Die Teilkasko ist sinnvoll für ältere Fahrzeuge und zahlt unter anderem bei Diebstahl, Glasbruch oder Wildunfällen.'
+    answer: 'Die gesetzliche Haftpflicht ist Pflicht nach § 1 PflVG. Eine Vollkasko empfiehlt sich typischerweise für Neu- und Leasingfahrzeuge sowie hochwertige Fahrzeuge bis etwa vier bis fünf Jahre, da sie auch selbstverschuldete Unfallschäden und Vandalismus abdeckt. Die Teilkasko schützt ältere Fahrzeuge vor unverschuldeten Risiken wie Diebstahl, Glasbruch, Sturm, Hagel und Tierschäden.'
   },
   {
-    question: 'Wann greift das Sonderkündigungsrecht?',
-    answer: 'Ein Sonderkündigungsrecht besteht insbesondere dann, wenn der Versicherer die Beiträge erhöht, ohne gleichzeitig die Leistungen zu verbessern. Auch nach einem regulierten Schadensfall oder bei einem Fahrzeugwechsel können Sie den Vertrag außerordentlich kündigen. Die Frist für die Sonderkündigung beträgt in der Regel einen Monat nach Erhalt der Änderungsmitteilung oder Schadensabwicklung.'
+    question: 'Wann greift das Sonderkündigungsrecht nach § 40 VVG?',
+    answer: 'Ein Sonderkündigungsrecht nach § 40 Abs. 1 VVG besteht insbesondere, wenn der Versicherer den Beitrag erhöht, ohne dass sich der Leistungsumfang entsprechend verbessert. Nach § 40 Abs. 1 Satz 2 VVG beträgt die Kündigungsfrist genau einen Monat ab tatsächlichem Zugang der Mitteilung über die Beitragserhöhung. Die Kündigung wird zu dem Zeitpunkt wirksam, zu dem die Erhöhung in Kraft treten sollte. Auch nach Abschluss einer Schadenregulierung oder bei Fahrzeugabmeldung/Fahrzeugwechsel besteht ein Kündigungsrecht.'
   },
   {
-    question: 'Kann ich auch nach dem November wechseln?',
-    answer: 'Ja, ein Wechsel nach November ist möglich, wenn Sie einen unterjährigen Vertrag haben oder ein Sonderkündigungsrecht vorliegt, etwa wegen einer Beitragserhöhung. Auch bei der Zulassung eines neuen oder gebrauchten Fahrzeugs können Sie sich jederzeit für einen anderen Versicherer entscheiden. Für kalenderjahrbezogene Verträge ohne Besonderheiten ist der Stichtag jedoch bindend.'
+    question: 'Kann ich auch nach dem 30. November wechseln?',
+    answer: 'Ja. Ein Wechsel nach dem 30. November ist möglich, wenn Ihr Vertrag eine unterjährige Laufzeit hat, wenn Sie ein neues oder gebrauchtes Fahrzeug zulassen oder wenn Ihnen ein Sonderkündigungsrecht nach § 40 VVG zusteht (etwa weil Ihnen die Beitragsrechnung mit einer Erhöhung erst im November oder Dezember zugeht).'
   },
   {
     question: 'Was passiert, wenn ich die Kündigungsfrist verpasst habe?',

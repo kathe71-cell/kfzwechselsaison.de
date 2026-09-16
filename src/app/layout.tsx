@@ -10,11 +10,11 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://kfzwechselsaison.de'),
   title: {
-    default: 'KFZ Wechselsaison 2026/2027 – Fristen nach § 40 VVG, Sparrechner & Kündigung',
+    default: 'KFZ Wechselsaison 2026/2027 – Fristen nach § 11 & § 40 VVG, Sparrechner & Kündigung',
     template: '%s | KFZ Wechselsaison',
   },
   description:
-    'Unabhängiges deutsches Fachportal zum Kfz-Versicherungswechsel: Stichtag 30. November, Kündigungsfristen nach § 40 VVG, Ersparnisrechner, GDV-Typklassen und rechtssicherer Kündigungs-Generator.',
+    'Unabhängiges Verbraucherportal zum Kfz-Versicherungswechsel: Gesetzliche Fristen nach § 11 & § 40 VVG, Ersparnisrechner, GDV-Typklassen und Muster-Kündigungsvorlagen.',
   openGraph: {
     type: 'website',
     locale: 'de_DE',
@@ -40,9 +40,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: 'https://kfzwechselsaison.de',
   },
   icons: {
     icon: [
@@ -86,7 +83,7 @@ const websiteSchema = {
   inLanguage: 'de-DE',
   publisher: { '@id': 'https://kfzwechselsaison.de/#org' },
   description:
-    'Unabhängiges Portal zum Kfz-Versicherungswechsel: Fristen nach § 40 VVG, Ersparnisrechner und Kündigung.',
+    'Unabhängiges Portal zum Kfz-Versicherungswechsel: Fristen nach § 11 und § 40 VVG, Ersparnisrechner und Muster-Kündigungsvorlagen.',
   potentialAction: {
     '@type': 'SearchAction',
     target: {

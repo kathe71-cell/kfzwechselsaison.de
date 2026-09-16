@@ -112,7 +112,7 @@ export function Footer() {
         <div className="mt-6 pt-6 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
           <div className="flex items-center gap-2">
             <Scale className="w-3.5 h-3.5 text-amber-400" />
-            <span>&sect; 5 DDG &middot; 100% DSGVO-konform &middot; Zero-CDN System Fonts &middot; Werbefrei</span>
+            <span>&sect; 5 DDG &middot; Redaktionelle Sorgfalt nach &sect; 18 Abs. 2 MStV &middot; Zero-CDN System Fonts &middot; Partnerfinanziert*</span>
           </div>
 
           <div className="flex items-center gap-4">

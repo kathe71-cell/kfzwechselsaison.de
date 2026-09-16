@@ -3,7 +3,11 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Über uns',
+  title: 'Über uns – Redaktionelle Transparenz & Leitbild',
+  description: 'Erfahren Sie mehr über KFZ Wechselsaison: Unabhängige Verbraucherinformationen, Redaktionsgrundsätze und Transparenz.',
+  alternates: {
+    canonical: 'https://kfzwechselsaison.de/ueber-uns/',
+  },
 };
 
 export default function UeberUnsPage() {

@@ -3,6 +3,10 @@ import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Affiliate-Hinweis & Transparenz',
+  description: 'Transparenz zu Werbelinks, Partnernetzwerken und der Finanzierung von KFZ Wechselsaison.',
+  alternates: {
+    canonical: 'https://kfzwechselsaison.de/affiliate-hinweis/',
+  },
 };
 
 export default function AffiliateHinweisPage() {

@@ -12,14 +12,14 @@ interface NavItem {
 
 const navigation: NavItem[] = [
   { label: 'Versicherung wechseln', href: '/kfz-versicherung-wechseln/' },
-  { label: 'Tarife vergleichen', href: '/kfz-versicherung-vergleichen/' },
+  { label: 'Spar- & Fristenrechner', href: '/#spar-rechner' },
   {
     label: 'Kündigung & Fristen',
     href: '/kfz-versicherung-kuendigen/',
     children: [
       { label: 'Kfz-Versicherung kündigen', href: '/kfz-versicherung-kuendigen/' },
       { label: 'Kündigungsfrist', href: '/kuendigungsfrist-kfz-versicherung/' },
-      { label: '30. November', href: '/30-november-kfz-versicherung/' },
+      { label: '30. November Stichtag', href: '/30-november-kfz-versicherung/' },
       { label: 'Sonderkündigungsrecht', href: '/sonderkuendigungsrecht-kfz-versicherung/' },
     ],
   },

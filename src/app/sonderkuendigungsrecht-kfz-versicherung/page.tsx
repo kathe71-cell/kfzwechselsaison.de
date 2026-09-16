@@ -37,8 +37,8 @@ export default function SonderkuendigungKfzVersicherungPage() {
                 Erhöht die Versicherung den Beitrag, ohne dass sich die vertraglichen Leistungen verbessern, haben Sie das Recht zu kündigen. Das gilt auch für versteckte Erhöhungen: Wenn Ihr Beitrag zwar sinkt, er aber durch eine bessere <Link href="/kfz-versicherung-vergleichen/" className="underline">Schadenfreiheitsklasse (SF-Klasse)</Link> eigentlich noch stärker hätte sinken müssen.
               </p>
               <div className="bg-surface-subtle p-4 mt-4 rounded">
-                <p className="text-sm font-semibold text-text">Frist:</p>
-                <p className="text-sm text-text-secondary">Genau ein Monat ab Zugang der Information über die Beitragserhöhung.</p>
+                <p className="text-sm font-semibold text-text">Frist nach § 40 Abs. 1 VVG:</p>
+                <p className="text-sm text-text-secondary">Genau ein Monat ab tatsächlichem Zugang der Mitteilung über die Erhöhung. Die Kündigung wird frühestens zu dem Zeitpunkt wirksam, zu dem die Erhöhung in Kraft getreten wäre.</p>
               </div>
             </div>
 

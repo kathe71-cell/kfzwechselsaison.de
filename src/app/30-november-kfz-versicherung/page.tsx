@@ -72,7 +72,7 @@ export default function NovemberStichtagPage() {
         <section className="my-12">
           <h2>Tipp: Nicht bis zum letzten Tag warten</h2>
           <p className="mb-4 text-text-secondary leading-relaxed">
-            Auch wenn der 30. November der offizielle Stichtag ist, empfiehlt es sich, den <Link href="/kfz-versicherung-vergleichen/" className="underline">Tarifvergleich</Link> bereits Mitte November durchzuführen. Das gibt Ihnen ausreichend Zeit, Tarife in Ruhe zu prüfen, Rückfragen zu klären und die Kündigung stressfrei (und rechtzeitig) abzuschicken.
+            Auch wenn der 30. November für Verträge mit Kalenderjahr der maßgebliche Stichtag ist, empfiehlt es sich, den <Link href="/kfz-versicherung-vergleichen/" className="underline">Tarifvergleich</Link> bereits frühzeitig im November durchzuführen. Das gibt Ihnen ausreichend Zeit, Angebote in Ruhe zu prüfen, eventuelle Rückfragen zu klären und die Kündigung stressfrei und mit nachweisbarem Zugang abzuschicken.
           </p>
         </section>
 

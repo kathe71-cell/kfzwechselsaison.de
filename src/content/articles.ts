@@ -117,7 +117,7 @@ export const articles: Article[] = [
       },
       {
         heading: 'Worauf beim rechtzeitigen Eingang zu achten ist',
-        content: '<p>Damit die Kündigung zum Stichtag wirksam wird, muss sie dem Versicherer spätestens am 30. November zugehen. Das Absendedatum ist nicht ausschlaggebend. Wird der Brief am 30. November zur Post gebracht, kommt er zu spät an.</p><p>Eine Kündigung per E-Mail oder Fax ist in der Regel schneller und lässt sich fristgerecht auch noch kurz vor knapp übermitteln. Achten Sie auf eine Sende- oder Empfangsbestätigung. Fällt der 30. November auf einen Sonntag, verschiebt sich die Frist nach aktueller Rechtslage nicht nach hinten, das Schreiben muss vorher eintreffen.</p>'
+        content: '<p>Damit die Kündigung zum Ablauf des Kalenderjahres wirksam wird, muss sie dem Versicherer spätestens am 30. November zugehen (Zugangsprinzip). Das Absendedatum ist nicht ausschlaggebend. Wird ein Brief erst am 30. November zur Post gebracht, erreicht er den Empfänger nicht mehr fristgerecht.</p><p>Eine Kündigung in Textform (z. B. per E-Mail oder Fax nach § 126b BGB) wird sofort übermittelt. Achten Sie auf einen qualifizierten Sende- bzw. Zugangsbericht. Fällt der 30. November auf ein Wochenende, sollten Sie sich nicht auf Fristverlängerungsregeln nach § 193 BGB verlassen, sondern den Zugang vorsorglich bereits am vorangehenden Werktag sicherstellen.</p>'
       },
       {
         heading: 'Was tun, wenn die Frist verpasst wurde?',
@@ -296,7 +296,7 @@ export const articles: Article[] = [
       },
       {
         heading: 'Die Ein-Monats-Frist',
-        content: '<p>Das Sonderkündigungsrecht ist zeitlich eng befristet. Sie haben nach dem Erhalt der Mitteilung über die Beitragserhöhung genau einen Monat Zeit, um den Vertrag zu kündigen.</p><p>Erhalten Sie das Schreiben beispielsweise am 15. November, muss Ihre Kündigung bis spätestens 15. Dezember beim Versicherer vorliegen. Da Sie im Streitfall nachweisen müssen, wann Sie das Schreiben erhalten haben, reicht hier meist die Textform (E-Mail, Fax) für eine zügige Abwicklung aus.</p>'
+        content: '<p>Das Sonderkündigungsrecht nach § 40 Abs. 1 VVG ist zeitlich befristet. Sie haben nach dem tatsächlichen Zugang der Mitteilung über die Beitragserhöhung genau einen Monat Zeit, um den Vertrag zu kündigen. Die Kündigung wird frühestens zu dem Zeitpunkt wirksam, zu dem auch die Erhöhung wirksam werden sollte.</p><p>Erhalten Sie das Schreiben beispielsweise am 15. November, muss Ihre Kündigung spätestens am 15. Dezember beim Versicherer vorliegen. Da Sie im Zweifel nachweisen müssen, dass Ihre Kündigung rechtzeitig zugegangen ist, empfiehlt sich die Textform (§ 126b BGB) mit qualifiziertem Sendenachweis (z. B. E-Mail mit Eingangsbestätigung, Fax-Sendeprotokoll) oder ein Einschreiben Einwurf.</p>'
       },
       {
         heading: 'Formulierung der Kündigung',

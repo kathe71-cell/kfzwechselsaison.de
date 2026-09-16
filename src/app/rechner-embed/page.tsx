@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: 'https://kfzwechselsaison.de/rechner-embed/',
+  },
 };
 
 export default function RechnerEmbedPage() {

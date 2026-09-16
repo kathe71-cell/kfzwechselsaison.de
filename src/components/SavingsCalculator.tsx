@@ -63,35 +63,52 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
     return () => clearInterval(interval);
   }, []);
 
-  // Calculation formula based on market benchmarks
+  // Mathematically consistent model calculation
+  // Explanatory note: SF-Klasse applies to Haftpflicht & Vollkasko, not Teilkasko.
+  // Workshop binding only applies to Kasko portions (Teilkasko & Vollkasko), never to pure Haftpflicht.
   const { estimatedNewPremium, totalSavings, savingsPercent, levers } = useMemo(() => {
-    let factor = 0.68; // Base benchmark saving potential (~32% market average)
+    // 1. Basic market price spread through tariff comparison (typical benchmark ~18% across providers)
+    let tarifDiffPct = 0.18;
 
-    // Mileage leverage
-    if (kmPerYear <= 10000) factor -= 0.05;
-    else if (kmPerYear >= 20000) factor += 0.04;
+    // 2. Mileage deviation effect (if driving less, lower risk tier)
+    let kmDiffPct = 0;
+    if (kmPerYear <= 10000) kmDiffPct = 0.04;
+    else if (kmPerYear >= 25000) kmDiffPct = -0.03;
 
-    // Workshop binding saving (~15% on Kasko part)
-    if (workshopBinding && (coverageType === 'teilkasko' || coverageType === 'vollkasko')) {
-      factor -= 0.06;
+    // 3. Workshop binding (only for Kasko; exactly 0 for pure Haftpflicht)
+    // On average Kasko represents ~40-60% of premium, saving 15-20% on that portion equates to ~8% overall for Vollkasko and ~5% for Teilkasko.
+    let werkstattDiffPct = 0;
+    if (coverageType !== 'haftpflicht' && workshopBinding) {
+      werkstattDiffPct = coverageType === 'vollkasko' ? 0.08 : 0.05;
     }
 
-    // High SF class has high percentage room for better pricing
-    if (sfClass >= 15) factor -= 0.04;
+    // 4. SF class effect (only for Haftpflicht & Vollkasko; Teilkasko has no SF class)
+    let sfDiffPct = 0;
+    if (coverageType !== 'teilkasko' && sfClass >= 15) {
+      sfDiffPct = 0.03; // Additional carrier-specific discount bracket
+    }
 
-    const clampedFactor = Math.max(0.45, Math.min(0.85, factor));
-    const newPrice = Math.round(currentPremium * clampedFactor);
-    const savings = currentPremium - newPrice;
+    const totalPct = Math.max(0.08, Math.min(0.38, tarifDiffPct + kmDiffPct + werkstattDiffPct + sfDiffPct));
+    
+    // Calculate discrete components that add up EXACTLY to totalSavings
+    const savings = Math.round(currentPremium * totalPct);
+    const newPrice = currentPremium - savings;
     const percent = Math.round((savings / currentPremium) * 100);
+
+    // Attribute exact shares to components
+    const sumPct = tarifDiffPct + Math.max(0, kmDiffPct) + werkstattDiffPct + sfDiffPct;
+    const werkstattSaving = werkstattDiffPct > 0 ? Math.round(savings * (werkstattDiffPct / sumPct)) : 0;
+    const sfSaving = sfDiffPct > 0 ? Math.round(savings * (sfDiffPct / sumPct)) : 0;
+    const tarifwechselSaving = savings - werkstattSaving - sfSaving;
 
     return {
       estimatedNewPremium: newPrice,
       totalSavings: savings,
       savingsPercent: percent,
       levers: {
-        tarifwechsel: Math.round(savings * 0.65),
-        werkstatt: workshopBinding ? Math.round(savings * 0.20) : 0,
-        sfOptimierung: Math.round(savings * 0.15),
+        tarifwechsel: tarifwechselSaving,
+        werkstatt: werkstattSaving,
+        sfOptimierung: sfSaving,
       }
     };
   }, [currentPremium, sfClass, kmPerYear, coverageType, workshopBinding]);
@@ -125,10 +142,10 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
             <span>INTERAKTIVER WECHSELSAISON-RECHNER 2026/2027</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Kfz-Ersparnis &amp; Fristen-Rechner
+            Kfz-Ersparnis- &amp; Fristen-Rechner
           </h2>
           <p className="text-sm text-slate-600 mt-1">
-            Ermitteln Sie in Sekunden Ihr Sparpotenzial und prüfen Sie die verbleibende Wechselfrist bis zum 30. November.
+            Beispielhafte Modellrechnung Ihres Sparpotenzials und Stichtags-Countdown für kalenderjährlich endende Verträge (31. Dezember).
           </p>
         </div>
 
@@ -136,7 +153,7 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
         <div className="bg-slate-900 text-white rounded-xl p-3.5 sm:p-4 shrink-0 shadow-sm">
           <div className="flex items-center gap-2 text-xs font-semibold text-amber-400 mb-2">
             <Clock className="w-4 h-4 animate-pulse" />
-            <span>COUNTDOWN BIS ZUM WECHSEL-STICHTAG</span>
+            <span>STICHTAG BEI ABLAUF ZUM 31. DEZEMBER</span>
           </div>
           <div className="grid grid-cols-4 gap-2 text-center">
             <div className="bg-slate-800/80 px-2 py-1.5 rounded">
@@ -157,7 +174,7 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
             </div>
           </div>
           <div className="text-[11px] text-slate-400 text-center mt-2 font-mono">
-            Stichtag: 30.11., 23:59:59 Uhr
+            Kündigungsfrist 1 Monat (§ 11 VVG): 30.11., 23:59 Uhr
           </div>
         </div>
       </div>
@@ -200,7 +217,7 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
                 Schadenfreiheitsklasse (SF-Klasse):
               </label>
               <span className="text-base font-black text-slate-950 font-mono bg-slate-100 px-3 py-0.5 rounded-md border border-slate-200">
-                SF {sfClass} ({Math.max(20, Math.round(100 - sfClass * 2.2))} %)
+                SF {sfClass} (ca. {Math.max(20, Math.round(100 - sfClass * 2.2))} %*)
               </span>
             </div>
             <input
@@ -218,6 +235,9 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
               <span>SF 15</span>
               <span>SF 35+ (Maximalrabatt)</span>
             </div>
+            <p className="text-[11px] text-slate-500 mt-1">
+              * Richtwert. Beitragssätze in Prozent variieren je nach Versicherer. Gilt für Haftpflicht und Vollkasko (in der Teilkasko gibt es keine SF-Klassen).
+            </p>
           </div>
 
           {/* Slider 3: Jährliche Fahrleistung */}
@@ -326,8 +346,14 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
               </div>
               {levers.werkstatt > 0 && (
                 <div className="flex justify-between text-slate-300">
-                  <span>Davon Werkstattbindung:</span>
+                  <span>Davon Werkstattbindung (Kasko):</span>
                   <span className="font-mono text-slate-200">ca. {levers.werkstatt} &euro;</span>
+                </div>
+              )}
+              {levers.sfOptimierung > 0 && (
+                <div className="flex justify-between text-slate-300">
+                  <span>Davon SF- &amp; Fahrleistungseffekt:</span>
+                  <span className="font-mono text-slate-200">ca. {levers.sfOptimierung} &euro;</span>
                 </div>
               )}
             </div>
@@ -339,7 +365,7 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
               href="#vergleichsrechner"
               className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm transition-all duration-150 shadow-md active:scale-95 text-center"
             >
-              <span>Jetzt Tarife vergleichen</span>
+              <span>Jetzt Tarife vergleichen*</span>
               <ArrowRight className="w-4 h-4" />
             </a>
 
@@ -366,7 +392,7 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
             </div>
 
             <p className="text-[10px] text-slate-400 leading-normal pt-1">
-              * Modellrechnung. Die tatsächliche Höhe hängt vom individuellen Schadenverlauf, der Typ- und Regionalklasse sowie den Annahmerichtlinien des Versicherers ab.
+              * Beispielhafte Modellrechnung. Die tatsächliche Beitragshöhe und individuelle Ersparnis hängen vom konkreten Fahrzeugtyp (Typklasse), Wohnort (Regionalklasse), individuellem Schadenverlauf sowie den Tarifkonditionen und Annahmerichtlinien der jeweiligen Versicherungsgesellschaft ab. Werkstattbindung wirkt sich ausschließlich auf Kaskobausteine aus.
             </p>
           </div>
         </div>

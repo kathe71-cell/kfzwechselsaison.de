@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
+  alternates: {
+    canonical: 'https://kfzwechselsaison.de/nutzungsbedingungen/',
+  },
 }
 
 export default function NutzungsbedingungenPage() {

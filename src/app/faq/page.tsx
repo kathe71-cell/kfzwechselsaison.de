@@ -6,8 +6,11 @@ import { ConversionSection } from '@/components/ConversionSection';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Häufige Fragen zur Kfz-Versicherung',
+  title: 'Häufige Fragen zur Kfz-Versicherung (FAQ)',
   description: 'Antworten auf die am häufigsten gestellten Fragen zum Thema Kfz-Versicherung, Wechsel, Kündigung und Tarife.',
+  alternates: {
+    canonical: 'https://kfzwechselsaison.de/faq/',
+  },
 };
 
 export default function FAQPage() {

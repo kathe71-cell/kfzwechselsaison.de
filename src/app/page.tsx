@@ -45,33 +45,33 @@ const wechselSteps = [
   },
   {
     number: 2,
-    title: 'Kündigungsstichtag 30. November beachten',
+    title: 'Kündigungsstichtag & Vertragsablauf ermitteln',
     description:
-      'Bei regulären Jahresverträgen muss die Kündigung bis spätestens 30. November (23:59 Uhr) beim Versicherer eingegangen sein (§ 11 VVG).',
+      'Endet Ihr Vertrag zum 31. Dezember, muss die Kündigung bis spätestens 30. November (23:59 Uhr) beim Versicherer vorliegen (§ 11 VVG). Bei unterjährigen Verträgen gilt das individuelle Ablaufdatum.',
   },
   {
     number: 3,
     title: 'Tarife unabhängig vergleichen',
     description:
-      'Nutzen Sie den Vergleichsrechner, um identische Leistungen (100 Mio. € Deckung, Kasko, Werkstattwahl) gegenüberzustellen.',
+      'Nutzen Sie den Vergleichsrechner, um identische Leistungen (mind. 100 Mio. € Deckung, Kaskoschutz, Werkstattregelung) gegenüberzustellen.',
   },
   {
     number: 4,
-    title: 'Neuen Vertrag verbindlich abschließen',
+    title: 'Neuen Vertrag verbindlich bestätigen lassen',
     description:
-      'Schließen Sie zuerst den neuen Vertrag ab und warten Sie die Bestätigung (eVB-Nummer) ab, bevor Sie den Altvertrag beenden.',
+      'Kündigen Sie den Altvertrag erst, wenn Sie die schriftliche Annahmebestätigung der neuen Versicherung mit Vertragsbeginn und dem gewünschten Deckungsumfang vorliegen haben (insb. bei Kaskoschutz).',
   },
   {
     number: 5,
-    title: 'Rechtssichere Kündigung übermitteln',
+    title: 'Kündigung frist- und formgerecht übermitteln',
     description:
-      'Nutzen Sie unseren Kündigungs-Generator. Versenden Sie das Schreiben per Einschreiben mit Rückschein oder qualifiziertem Fax.',
+      'Nutzen Sie unsere Muster-Formulierungshilfe. Versenden Sie das Schreiben per Einschreiben mit Rückschein, qualifiziertem Fax oder über das Kundenportal mit Empfangsbestätigung.',
   },
   {
     number: 6,
     title: 'SF-Klassen-Übertrag kontrollieren',
     description:
-      'Ihr bisheriger Versicherer meldet die erfahrene Schadenfreiheitsklasse automatisch an die neue Versicherungsgesellschaft.',
+      'Ihr bisheriger Versicherer meldet die erfahrene Schadenfreiheitsklasse (schadenfreie Jahre) an die neue Versicherungsgesellschaft.',
   },
 ];
 
@@ -129,7 +129,7 @@ export default function HomePage() {
           </h1>
 
           <p className="mx-auto max-w-2xl text-base sm:text-xl text-slate-700 leading-relaxed font-normal mb-8">
-            Das unabhängige Fachportal für Verbraucher: Kündigungsfristen nach dem Versicherungsvertragsgesetz (VVG), interaktiver Ersparnisrechner, GDV-Typklassen und rechtsgeprüfte Kündigungsvorlagen.
+            Das unabhängige Fachportal für Verbraucher: Gesetzliche Kündigungsfristen nach dem Versicherungsvertragsgesetz (VVG), interaktiver Ersparnisrechner, GDV-Typklassen und Muster-Kündigungsvorlagen.
           </p>
 
           {/* Quick CTA Pill Group */}
@@ -176,8 +176,8 @@ export default function HomePage() {
             </div>
             <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
               <div className="text-[11px] font-mono text-slate-400 uppercase">Portal-Status</div>
-              <div className="text-base font-extrabold text-emerald-700 mt-0.5">100% Unabhängig</div>
-              <div className="text-[11px] text-slate-500">Werbefrei &middot; E-E-A-T</div>
+              <div className="text-base font-extrabold text-slate-900 mt-0.5">Unabhängig</div>
+              <div className="text-[11px] text-slate-500">Transparenz &middot; Partnerlinks</div>
             </div>
           </div>
         </div>
@@ -198,13 +198,13 @@ export default function HomePage() {
             <div className="text-center max-w-2xl mx-auto mb-6">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200 text-slate-800 text-xs font-mono font-bold mb-2">
                 <Building2 className="w-3.5 h-3.5 text-slate-700" />
-                <span>MARKTWEITER KFZ-TARIFVERGLEICH*</span>
+                <span>ONLINE-TARIFVERGLEICH*</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
-                Aktuelle Kfz-Versicherungstarife vergleichen
+                Kfz-Versicherungstarife teilnehmender Anbieter vergleichen
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 mt-2">
-                Vergleichen Sie kostenlos und unverbindlich Angebote von über 300 Gesellschaften für Haftpflicht, Teilkasko und Vollkasko.
+                Vergleichen Sie Angebote teilnehmender Versicherer und Gesellschaften im Tarifnetzwerk für Haftpflicht, Teilkasko und Vollkasko.
               </p>
             </div>
 
