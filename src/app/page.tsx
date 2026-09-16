@@ -47,7 +47,7 @@ const wechselSteps = [
     number: 2,
     title: 'Kündigungsstichtag & Vertragsablauf ermitteln',
     description:
-      'Endet Ihr Vertrag zum 31. Dezember, muss die Kündigung bis spätestens 30. November (23:59 Uhr) beim Versicherer vorliegen (§ 11 VVG). Bei unterjährigen Verträgen gilt das individuelle Ablaufdatum.',
+      'Bei vielen Verträgen beträgt die vereinbarte Kündigungsfrist einen Monat zum Ablauf (Rahmen § 11 Abs. 3 VVG). Endet der Vertrag am 31. Dezember, ist der 30. November der Stichtag. Maßgeblich sind Ihre AKB.',
   },
   {
     number: 3,
@@ -161,8 +161,8 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-6 border-t border-slate-200/80 text-left">
             <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
               <div className="text-[11px] font-mono text-slate-400 uppercase">Ordentliche Frist</div>
-              <div className="text-base font-extrabold text-slate-900 mt-0.5">30. November</div>
-              <div className="text-[11px] text-slate-500">&sect; 11 Abs. 1 VVG</div>
+              <div className="text-base font-extrabold text-slate-900 mt-0.5">30. November*</div>
+              <div className="text-[11px] text-slate-500">Vertrag &middot; &sect; 11 Abs. 3 VVG</div>
             </div>
             <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
               <div className="text-[11px] font-mono text-slate-400 uppercase">Sonderkündigung</div>
@@ -269,58 +269,91 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ==================== 8. E-E-A-T REDAKTIONS- & METHODIK-BOX ==================== */}
+        {/* ==================== 8. E-E-A-T REDAKTIONS- & QUELLEN-BOX ==================== */}
         <section className="my-16">
           <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-bold mb-2">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>REDAKTIONELLES TRANSPARENZVERSPRECHEN &middot; E-E-A-T</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-amber-400 border border-amber-500/30 text-xs font-mono font-bold mb-2">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>REDAKTIONELLE GRUNDSÄTZE &middot; QUELLENNACHWEIS</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                  Fachredaktion &amp; Amtliche Primärquellen
+                  Fachredaktion &amp; Primärquellen
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
-                  Alle rechtlichen Angaben, Berechnungen und Kündigungsfristen werden fortlaufend nach den aktuellen Vorgaben des Versicherungsvertragsgesetzes (VVG) sowie den Publikationen des GDV und der BaFin geprüft.
+                  Alle rechtlichen Erläuterungen, Modellrechnungen und Kündigungshinweise orientieren sich an den gesetzlichen Bestimmungen des Versicherungsvertragsgesetzes (VVG) sowie den Veröffentlichungen des Branchenverbands GDV und der BaFin.
                 </p>
               </div>
 
               <div className="text-xs font-mono text-slate-400 bg-slate-800/80 p-3 rounded-xl border border-slate-700 shrink-0">
-                <div>Prüfstand: Wechselsaison 2026/2027</div>
-                <div className="text-emerald-400 font-semibold mt-0.5">Status: Vollständig verifiziert</div>
+                <div>Bezugszeitraum: Wechselsaison 2026/2027</div>
+                <div className="text-slate-300 font-semibold mt-0.5">Sorgfalt nach &sect; 18 Abs. 2 MStV</div>
               </div>
             </div>
 
             <div className="grid sm:grid-cols-3 gap-4 pt-6 text-xs text-slate-300">
-              <div className="bg-slate-800/50 p-3.5 rounded-xl border border-slate-800">
-                <div className="font-bold text-white flex items-center gap-1.5 mb-1">
-                  <Scale className="w-3.5 h-3.5 text-amber-400" />
-                  <span>&sect; 40 &amp; &sect; 11 VVG</span>
+              <div className="bg-slate-800/50 p-3.5 rounded-xl border border-slate-800 flex flex-col justify-between">
+                <div>
+                  <div className="font-bold text-white flex items-center gap-1.5 mb-1">
+                    <Scale className="w-3.5 h-3.5 text-amber-400" />
+                    <span>&sect; 11 &amp; &sect; 40 VVG</span>
+                  </div>
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    Gesetzlicher Rahmen für vertragliche Kündigungsfristen (&sect; 11 Abs. 3 VVG) und das Sonderkündigungsrecht bei Beitragserhöhungen (&sect; 40 Abs. 1 VVG).
+                  </p>
                 </div>
-                <p className="text-[11px] text-slate-400">
-                  Gesetzliche Grundlagen für die einmonatige Kündigungsfrist sowie das außerordentliche Kündigungsrecht bei Beitragsanpassungen.
-                </p>
+                <a
+                  href="https://www.gesetze-im-internet.de/vvg_2008/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 font-mono text-[11px] mt-3 hover:underline"
+                >
+                  <span>Gesetzestext VVG (BfJ)</span>
+                  <ArrowRight className="w-3 h-3" />
+                </a>
               </div>
 
-              <div className="bg-slate-800/50 p-3.5 rounded-xl border border-slate-800">
-                <div className="font-bold text-white flex items-center gap-1.5 mb-1">
-                  <Building2 className="w-3.5 h-3.5 text-amber-400" />
-                  <span>GDV Gesamtverband</span>
+              <div className="bg-slate-800/50 p-3.5 rounded-xl border border-slate-800 flex flex-col justify-between">
+                <div>
+                  <div className="font-bold text-white flex items-center gap-1.5 mb-1">
+                    <Building2 className="w-3.5 h-3.5 text-amber-400" />
+                    <span>GDV e.V. (Branchenverband)</span>
+                  </div>
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    Veröffentlichungen und unverbindliche Typklassenstatistiken des privatrechtlichen Gesamtverbands der Deutschen Versicherungswirtschaft e.V.
+                  </p>
                 </div>
-                <p className="text-[11px] text-slate-400">
-                  Amtliche Veröffentlichungen der Typklassenstatistik und Regionalklassen für das Versicherungsjahr 2026/2027.
-                </p>
+                <a
+                  href="https://www.gdv.de/gdv/themen/schaden-unfall/typklassenabfrage-104938"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 font-mono text-[11px] mt-3 hover:underline"
+                >
+                  <span>GDV Typklassenabfrage</span>
+                  <ArrowRight className="w-3 h-3" />
+                </a>
               </div>
 
-              <div className="bg-slate-800/50 p-3.5 rounded-xl border border-slate-800">
-                <div className="font-bold text-white flex items-center gap-1.5 mb-1">
-                  <Lock className="w-3.5 h-3.5 text-amber-400" />
-                  <span>BaFin Aufsicht</span>
+              <div className="bg-slate-800/50 p-3.5 rounded-xl border border-slate-800 flex flex-col justify-between">
+                <div>
+                  <div className="font-bold text-white flex items-center gap-1.5 mb-1">
+                    <Lock className="w-3.5 h-3.5 text-amber-400" />
+                    <span>BaFin Finanzaufsicht</span>
+                  </div>
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    Verbraucherschutzhinweise und Aufsichtsgrundsätze der Bundesanstalt für Finanzdienstleistungsaufsicht zu Kfz-Versicherungsverträgen.
+                  </p>
                 </div>
-                <p className="text-[11px] text-slate-400">
-                  Beachtung der Verbraucherschutz- und Transparenzrichtlinien der Bundesanstalt für Finanzdienstleistungsaufsicht.
-                </p>
+                <a
+                  href="https://www.bafin.de/DE/Verbraucher/Finanzwissen/Versicherungen/Kfz/kfz_node.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 font-mono text-[11px] mt-3 hover:underline"
+                >
+                  <span>Verbraucherinfo BaFin</span>
+                  <ArrowRight className="w-3 h-3" />
+                </a>
               </div>
             </div>
           </div>

@@ -25,12 +25,15 @@ export default function KuendigungsfristKfzVersicherungPage() {
         <AffiliateDisclosure />
 
         <section className="my-12">
-          <h2>Gesetzliche Frist nach § 11 Abs. 1 VVG</h2>
+          <h2>Kündigungsfrist und gesetzlicher Rahmen nach § 11 VVG</h2>
           <p className="mb-4 text-text-secondary leading-relaxed">
-            Nach § 11 Abs. 1 des Versicherungsvertragsgesetzes (VVG) beträgt die ordentliche Kündigungsfrist bei mindestens einjähriger Vertragslaufzeit genau <strong>einen Monat zum Ablauf des jeweiligen Versicherungsjahres</strong>. 
+            Bei vielen Kfz-Versicherungen beträgt die vertraglich vereinbarte Kündigungsfrist genau <strong>einen Monat zum Vertragsablauf</strong>. Maßgeblich sind Ihre jeweiligen Versicherungsbedingungen (AKB).
           </p>
           <p className="mb-4 text-text-secondary leading-relaxed">
-            Wichtig ist hier der Unterschied zwischen Kalenderjahr und Versicherungsjahr. Bei den meisten Verträgen in Deutschland sind diese identisch: Das Versicherungsjahr läuft vom 1. Januar bis zum 31. Dezember. Daraus ergibt sich der <Link href="/30-november-kfz-versicherung/" className="underline">30. November</Link> als der klassische Stichtag für den tatsächlichen Zugang der Kündigung beim Versicherer.
+            Das Versicherungsvertragsgesetz setzt in <strong>§ 11 Abs. 3 VVG</strong> den zwingenden gesetzlichen Rahmen: Die Kündigungsfrist muss für beide Vertragsteile gleich sein und darf nicht weniger als einen Monat und nicht mehr als drei Monate betragen. § 11 Abs. 1 VVG regelt zudem die stillschweigende Vertragsverlängerung um jeweils höchstens ein Jahr, wenn der Vertrag nicht fristgerecht gekündigt wird.
+          </p>
+          <p className="mb-4 text-text-secondary leading-relaxed">
+            Wichtig ist hier der Unterschied zwischen Kalenderjahr und unterjährigem Versicherungsjahr. Bei vielen Verträgen in Deutschland sind diese identisch: Das Versicherungsjahr läuft vom 1. Januar bis zum 31. Dezember. Bei einer vertraglich vereinbarten einmonatigen Frist ergibt sich daraus der <Link href="/30-november-kfz-versicherung/" className="underline">30. November</Link> als der klassische Stichtag für den tatsächlichen Zugang der Kündigung beim Versicherer.
           </p>
         </section>
 

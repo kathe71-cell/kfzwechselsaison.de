@@ -10,7 +10,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: 'Wie lang ist die Kündigungsfrist bei der Kfz-Versicherung?',
-    answer: 'Nach § 11 Abs. 1 VVG beträgt die Kündigungsfrist bei der Kfz-Versicherung einen Monat zum Ende des jeweiligen Versicherungsjahres. Endet das Versicherungsjahr wie bei vielen Verträgen am 31. Dezember, muss das Kündigungsschreiben spätestens am 30. November (23:59 Uhr) beim Versicherer vorliegen. Bei abweichenden oder unterjährigen Laufzeiten verschiebt sich die Frist auf einen Monat vor dem individuellen Ablaufdatum.'
+    answer: 'Bei vielen Kfz-Versicherungen beträgt die vertraglich vereinbarte Kündigungsfrist einen Monat zum Vertragsablauf. Maßgeblich sind Ihre jeweiligen Versicherungsbedingungen. Nach § 11 Abs. 3 VVG darf die Kündigungsfrist gesetzlich zwischen einem und drei Monaten betragen. Endet Ihr Vertrag wie bei vielen Kfz-Policen am 31. Dezember, muss das Kündigungsschreiben bei einmonatiger Frist spätestens am 30. November (23:59 Uhr) beim Versicherer vorliegen. Bei unterjährigen Verträgen gilt die Frist entsprechend vor dem individuellen Ablaufdatum.'
   },
   {
     question: 'Muss jeder Vertrag bis zum 30. November gekündigt werden?',

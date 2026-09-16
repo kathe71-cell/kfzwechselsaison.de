@@ -10,11 +10,11 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://kfzwechselsaison.de'),
   title: {
-    default: 'KFZ Wechselsaison 2026/2027 – Fristen nach § 11 & § 40 VVG, Sparrechner & Kündigung',
+    default: 'KFZ Wechselsaison 2026/2027 – Fristen nach VVG & AKB, Sparrechner & Kündigung',
     template: '%s | KFZ Wechselsaison',
   },
   description:
-    'Unabhängiges Verbraucherportal zum Kfz-Versicherungswechsel: Gesetzliche Fristen nach § 11 & § 40 VVG, Ersparnisrechner, GDV-Typklassen und Muster-Kündigungsvorlagen.',
+    'Unabhängiges Verbraucherportal zum Kfz-Versicherungswechsel: Fristen nach VVG & AKB, Sonderkündigung nach § 40 VVG, Ersparnisrechner, GDV-Typklassen und Muster-Kündigungsvorlagen.',
   openGraph: {
     type: 'website',
     locale: 'de_DE',
@@ -83,7 +83,7 @@ const websiteSchema = {
   inLanguage: 'de-DE',
   publisher: { '@id': 'https://kfzwechselsaison.de/#org' },
   description:
-    'Unabhängiges Portal zum Kfz-Versicherungswechsel: Fristen nach § 11 und § 40 VVG, Ersparnisrechner und Muster-Kündigungsvorlagen.',
+    'Unabhängiges Portal zum Kfz-Versicherungswechsel: Fristen nach VVG & AKB, Sonderkündigung nach § 40 VVG, Ersparnisrechner und Muster-Kündigungsvorlagen.',
   potentialAction: {
     '@type': 'SearchAction',
     target: {

@@ -18,7 +18,7 @@ export function Footer() {
               <span className="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 ml-2">2026/2027</span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Unabhängiges deutsches Fachportal zum Kfz-Versicherungswechsel. Wir informieren sachlich über gesetzliche Kündigungsfristen gem. § 11 &amp; § 40 VVG, GDV-Typklassen und reale Sparpotenziale.
+              Unabhängiges deutsches Fachportal zum Kfz-Versicherungswechsel. Wir informieren sachlich über Kündigungsfristen nach Vertrag und VVG, Sonderkündigung gem. &sect; 40 VVG, Typklassen und Sparpotenziale.
             </p>
           </div>
 

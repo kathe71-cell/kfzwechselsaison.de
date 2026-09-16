@@ -174,7 +174,7 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
             </div>
           </div>
           <div className="text-[11px] text-slate-400 text-center mt-2 font-mono">
-            Kündigungsfrist 1 Monat (§ 11 VVG): 30.11., 23:59 Uhr
+            Frist bei Ablauf zum 31.12. (1 Monat gem. AKB): 30.11., 23:59 Uhr
           </div>
         </div>
       </div>

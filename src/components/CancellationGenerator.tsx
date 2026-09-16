@@ -95,7 +95,7 @@ Vertragsabteilung / Kfz-Bestand
 Datum: ${today}
 
 ORDENTLICHE KÜNDIGUNG MEINER KFZ-VERSICHERUNG ZUM ABLAUF
-Kündigung nach § 11 Abs. 1 VVG
+Kündigung gem. Versicherungsvertrag / AKB (Rahmen § 11 Abs. 3 VVG)
 
 Versicherungsschein-Nr.: ${displayPolicy}
 Amtliches Kennzeichen:   ${displayPlate}
@@ -166,7 +166,7 @@ _______________________________________
                   : 'text-slate-600 hover:text-slate-950'
               }`}
             >
-              Ordentlich (§ 11 VVG)
+              Ordentlich (Vertragsablauf)
             </button>
             <button
               type="button"
@@ -359,7 +359,7 @@ _______________________________________
                   {isFormIncomplete ? 'Musteransicht (enthält noch Platzhalter)' : 'Dokumentenvorschau'}
                 </span>
                 <span className="text-xs text-slate-600 font-mono flex items-center gap-1">
-                  Muster gem. {cancellationType === 'special' ? '§ 40 VVG' : '§ 11 VVG'}
+                  Muster gem. {cancellationType === 'special' ? '§ 40 VVG' : 'Vertragsablauf / AKB'}
                 </span>
               </div>
 
