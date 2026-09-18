@@ -24,9 +24,10 @@ export const metadata: Metadata = {
     description: 'Unabhängiges Verbraucherportal zum Autoversicherungs-Wechsel. Gesetzliche Fristen, Ersparnisrechner und Kündigungsvorlagen.',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
+        type: 'image/png',
         alt: 'KFZ Wechselsaison 2026/2027',
       },
     ],
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'KFZ Wechselsaison 2026/2027 – Wechselfristen & Ersparnisrechner',
     description: 'Unabhängiges Verbraucherportal rund um den Kfz-Versicherungswechsel, Fristen nach VVG und GDV-Typklassen.',
-    images: ['/og-image.svg'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
