@@ -18,8 +18,7 @@
     <text x="16" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#fbbf24" letter-spacing="2">STICHTAG 30. NOVEMBER</text>
     <text x="0" y="110" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="56" font-weight="900" fill="#ffffff" letter-spacing="-1">KFZ Wechselsaison</text>
     <text x="0" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="56" font-weight="900" fill="url(#gold)" letter-spacing="-1">2026 / 2027</text>
-    <text x="0" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="400" fill="#94a3b8">Unabhängiges Fachportal: Fristen nach § 40 VVG, Sparrechner &amp; Kündigung</text>
-    <line x1="0" y1="300" x2="920" y2="300" stroke="#334155" stroke-width="1" />
-    <text x="0" y="345" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="600" fill="#64748b">kfzwechselsaison.de · E-E-A-T Geprüft · GDV Typklassen · 100% Werbefrei</text>
+    <text x="0" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="400" fill="#94a3b8">Unabhängiges Informationsportal: Fristen nach § 40 VVG, Rechner &amp; Musterschreiben</text>
+    <text x="0" y="345" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="600" fill="#64748b">kfzwechselsaison.de · Transparente Information · GDV Typklassen · Gesetzliche Fristen nach VVG</text>
   </g>
 </svg>

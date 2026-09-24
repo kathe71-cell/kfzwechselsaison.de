@@ -49,7 +49,7 @@ export default function KfzVersicherungVergleichenPage() {
             </div>
             <div className="bg-surface border border-border p-6 rounded transition-shadow">
               <h3>Werkstattbindung</h3>
-              <p className="text-text-secondary">Tarife mit Werkstattbindung sind ca. 10 bis 20 Prozent günstiger. Im Schadenfall müssen Sie jedoch eine Partnerwerkstatt der Versicherung aufsuchen. Das ist oft unproblematisch, außer Sie haben ein Leasingfahrzeug (Vorgaben beachten!).</p>
+              <p className="text-text-secondary">Tarife mit Werkstattbindung können günstiger sein. Die tatsächliche Beitragsersparnis hängt vom jeweiligen Versicherer und Tarif ab (oft als Rabatt auf den Kaskobeitrag kalkuliert). Im Schadenfall müssen Sie eine Partnerwerkstatt der Versicherung aufsuchen. Bei Neuwagen oder Leasingfahrzeugen sollten Sie vorab die Garantie- und Leasingvorgaben prüfen.</p>
             </div>
             <div className="bg-surface border border-border p-6 rounded transition-shadow">
               <h3>Grobe Fahrlässigkeit</h3>

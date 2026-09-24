@@ -2,9 +2,23 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ShieldCheck, Scale, ArrowRight, Code } from 'lucide-react';
 
 export function Footer() {
+  const pathname = usePathname();
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === '/' || pathname === '') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      if (typeof window !== 'undefined' && window.location.hash) {
+        window.history.pushState(null, '', '/');
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="border-t border-slate-800 bg-slate-950 text-slate-300">
@@ -12,13 +26,18 @@ export function Footer() {
         {/* Brand statement bar */}
         <div className="pb-10 mb-10 border-b border-slate-800/80 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="max-w-2xl">
-            <Link href="/" className="inline-flex items-baseline gap-1.5 no-underline mb-3">
+            <Link
+              href="/"
+              onClick={handleLogoClick}
+              className="inline-flex items-baseline gap-1.5 no-underline mb-3 cursor-pointer"
+              aria-label="KFZ Wechselsaison – Nach oben"
+            >
               <span className="text-2xl font-black tracking-tight text-white">KFZ</span>
               <span className="text-xl font-bold tracking-tight text-amber-400">Wechselsaison</span>
               <span className="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 ml-2">2026/2027</span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Unabhängiges deutsches Fachportal zum Kfz-Versicherungswechsel. Wir informieren sachlich über Kündigungsfristen nach Vertrag und VVG, Sonderkündigung gem. &sect; 40 VVG, Typklassen und Sparpotenziale.
+              Unabhängiges deutsches Informationsportal zum Kfz-Versicherungswechsel. Wir informieren sachlich über Kündigungsfristen nach Vertrag und VVG, Sonderkündigung gem. &sect; 40 VVG, Typklassen und Sparpotenziale.
             </p>
           </div>
 
@@ -48,6 +67,8 @@ export function Footer() {
               Fristen &amp; Recht (§ VVG)
             </p>
             <ul className="space-y-2 text-slate-400">
+              <li><Link href="/#sonderkuendigungs-checker" className="hover:text-white transition-colors font-semibold text-amber-400">&rarr; Sonderkündigungs-Checker</Link></li>
+              <li><Link href="/#kuendigungsfrist-rechner" className="hover:text-white transition-colors font-semibold text-amber-400">&rarr; Fristen-Rechner (auch unterjährig)</Link></li>
               <li><Link href="/30-november-kfz-versicherung/" className="hover:text-white transition-colors">Stichtag 30. November</Link></li>
               <li><Link href="/kuendigungsfrist-kfz-versicherung/" className="hover:text-white transition-colors">Kündigungsfristen nach VVG</Link></li>
               <li><Link href="/sonderkuendigungsrecht-kfz-versicherung/" className="hover:text-white transition-colors">Sonderkündigung (§ 40 VVG)</Link></li>
@@ -64,8 +85,9 @@ export function Footer() {
             <ul className="space-y-2 text-slate-400">
               <li><Link href="/kfz-versicherung-wechseln/" className="hover:text-white transition-colors">Kfz-Versicherung wechseln</Link></li>
               <li><Link href="/kfz-versicherung-vergleichen/" className="hover:text-white transition-colors">Tarife objektiv vergleichen</Link></li>
-              <li><Link href="/#spar-rechner" className="hover:text-white transition-colors font-semibold text-slate-200">Ersparnis- &amp; Fristenrechner</Link></li>
-              <li><Link href="/#gdv-matrix" className="hover:text-white transition-colors">Typklassen verstehen</Link></li>
+              <li><Link href="/#spar-rechner" className="hover:text-white transition-colors font-semibold text-slate-200">Kfz-Ersparnis-Modellrechner</Link></li>
+              <li><Link href="/#hsn-tsn-guide" className="hover:text-white transition-colors font-semibold text-amber-400">&rarr; HSN / TSN Finder (Fahrzeugschein)</Link></li>
+              <li><Link href="/#gdv-matrix" className="hover:text-white transition-colors">Typklassen-Simulator (GDV)</Link></li>
               <li><Link href="/kfz-versicherung-2027/" className="hover:text-white transition-colors">Ausblick Beitragsjahr 2027</Link></li>
             </ul>
           </div>
@@ -90,8 +112,8 @@ export function Footer() {
               Transparenz &amp; Portal
             </p>
             <ul className="space-y-2 text-slate-400">
-              <li><Link href="/ueber-uns/" className="hover:text-white transition-colors">Über das Fachportal</Link></li>
-              <li><Link href="/ratgeber/" className="hover:text-white transition-colors">Fachratgeber &amp; Artikel</Link></li>
+              <li><Link href="/ueber-uns/" className="hover:text-white transition-colors">Über das Informationsportal</Link></li>
+              <li><Link href="/ratgeber/" className="hover:text-white transition-colors">Ratgeber &amp; Artikel</Link></li>
               <li><Link href="/faq/" className="hover:text-white transition-colors">Häufige Fragen (FAQ)</Link></li>
               <li><Link href="/affiliate-hinweis/" className="hover:text-white transition-colors">Transparenz &amp; Affiliate-Hinweis</Link></li>
               <li><Link href="/impressum/" className="hover:text-white transition-colors font-bold text-slate-200">&rarr; Impressum nach &sect; 5 DDG</Link></li>

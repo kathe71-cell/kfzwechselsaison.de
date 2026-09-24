@@ -197,7 +197,7 @@ export const articles: Article[] = [
       },
       {
         heading: 'Werkstattbindung: Vor- und Nachteile',
-        content: '<p>Viele Versicherer bieten Nachlässe von 10 bis 20 Prozent an, wenn man sich für einen Tarif mit Werkstattbindung entscheidet. Im Schadensfall schreibt die Versicherung dann vor, in welcher Partnerwerkstatt das Auto repariert wird.</p><p>Das kann sinnvoll und günstig sein. Besitzen Sie jedoch einen Neuwagen, ein Leasingfahrzeug oder legen Sie Wert darauf, immer eine spezifische Vertragswerkstatt aufzusuchen, sollten Sie Tarife ohne Werkstattbindung bevorzugen, um Garantieansprüche nicht zu gefährden.</p>'
+        content: '<p>Tarife mit Werkstattbindung können im Kaskobereich spürbar günstiger sein; die tatsächliche Ersparnis hängt jedoch vom Versicherer und der gewählten Tariflinie ab. Im Schadensfall gibt die Versicherung dann vor, in welcher zertifizierten Partnerwerkstatt das Auto repariert wird.</p><p>Das kann sinnvoll sein, wenn Sie die Kaskoprämie senken möchten. Besitzen Sie jedoch einen Neuwagen, ein Leasingfahrzeug oder legen Sie Wert darauf, immer eine spezifische Marken-Vertragswerkstatt aufzusuchen, sollten Sie Tarife mit freier Werkstattwahl bevorzugen, um Garantieansprüche des Herstellers oder Leasingvorgaben nicht zu gefährden.</p>'
       },
       {
         heading: 'Neuwert- und Kaufpreisentschädigung',

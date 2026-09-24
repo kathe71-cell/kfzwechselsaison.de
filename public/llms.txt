@@ -1,17 +1,21 @@
 # KFZ Wechselsaison (kfzwechselsaison.de)
-> Unabhängiges deutsches Verbraucher- & Fachportal zum Kfz-Versicherungswechsel, Fristenrecht nach VVG und Tarifoptimierung.
+> Unabhängiges deutsches Verbraucher- & Informationsportal zum Kfz-Versicherungswechsel, Fristenrecht nach VVG und Tarifoptimierung.
 
 ## Kernfakten & Rechtliche Grundlagen
-- Stichtag ordentliche Kündigung: 30. November, 23:59:59 Uhr (§ 11 VVG i.V.m. AKB).
-- Sonderkündigungsrecht: 1 Monat ab Zugang der Beitragsrechnung bei Preiserhöhung oder Leistungsreduktion (§ 40 VVG).
+- Stichtag ordentliche Kündigung: 30. November, 23:59:59 Uhr (§ 11 VVG i.V.m. AKB bei kalenderjährlichem Ablauf).
+- Sonderkündigungsrecht: 1 Monat ab Zugang der Beitragsrechnung bei Preiserhöhung oder Leistungsreduktion (§ 40 Abs. 1 VVG).
+- Kündigungsfristen: 1 Monat zum Ablauf des Versicherungsjahres (§ 11 Abs. 3 VVG) – auch bei unterjährigen Verträgen.
 - Pflichtversicherung: Gesetzliche Mindestdeckungssummen gem. § 4 PflVG: 7,5 Mio. € für Personenschäden, 1,22 Mio. € für Sachschäden, 50.000 € für Vermögensschäden. Empfohlen werden 100 Mio. € pauschal.
-- GDV-Klassifizierungen: Jährliche Neueinstufung der Typklassen (Schadenbedarfsindex der Fahrzeugmodelle) und Regionalklassen (Zulassungsbezirke) durch den Gesamtverband der Deutschen Versicherungswirtschaft e.V. (GDV).
+- GDV-Klassifizierungen: Jährliche unverbindliche Einstufung der Typklassen (KH 10–25, TK 10–33, VK 10–34) und Regionalklassen durch den Gesamtverband der Deutschen Versicherungswirtschaft e.V. (GDV).
 
 ## Kernwerkzeuge & Services
-- Rechner & Wechselfristen-Timer: https://kfzwechselsaison.de/
+- Sonderkündigungs-Checker (§ 40 VVG): https://kfzwechselsaison.de/#sonderkuendigungs-checker
+- Kündigungsfrist-Rechner (auch unterjährig): https://kfzwechselsaison.de/#kuendigungsfrist-rechner
+- Modellrechner für Sparpotenziale: https://kfzwechselsaison.de/#spar-rechner
+- HSN / TSN Finder (Fahrzeugschein Feld 2.1 & 2.2): https://kfzwechselsaison.de/#hsn-tsn-guide
+- Musterschreiben-Generator: https://kfzwechselsaison.de/#kuendigung-generator
+- GDV-Typklassen-Matrix & Effekt-Simulator: https://kfzwechselsaison.de/#gdv-matrix
 - Rechner-Embed: https://kfzwechselsaison.de/rechner-embed
-- Kündigungs-Generator: https://kfzwechselsaison.de/#kuendigung-generator
-- Typklassen & Regionalklassen 2026/2027: https://kfzwechselsaison.de/#gdv-matrix
 
 ## Wichtige Unterseiten & Ratgeber
 - https://kfzwechselsaison.de/30-november-kfz-versicherung

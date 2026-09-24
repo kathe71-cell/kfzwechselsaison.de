@@ -66,7 +66,7 @@ const organizationSchema = {
   url: 'https://kfzwechselsaison.de',
   logo: 'https://kfzwechselsaison.de/icon.png',
   description:
-    'Unabhängiges deutsches Verbraucher- und Fachportal rund um den Kfz-Versicherungswechsel, Fristen nach VVG und Tarifoptimierung.',
+    'Unabhängiges deutsches Verbraucher- und Informationsportal rund um den Kfz-Versicherungswechsel, Fristen nach VVG und Tarifoptimierung.',
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'jens@kathe.org',

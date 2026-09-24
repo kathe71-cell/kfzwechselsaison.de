@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'KFZ Wechselsaison',
   claim: 'Kfz-Versicherung vergleichen, wechseln und sparen',
   url: 'https://kfzwechselsaison.de',
-  description: 'Unabhängiges deutsches Verbraucher- und Fachportal rund um den Kfz-Versicherungswechsel: Fristen nach § 40 VVG, Sparpotenziale und Kündigung.',
+  description: 'Unabhängiges deutsches Verbraucher- und Informationsportal rund um den Kfz-Versicherungswechsel: Fristen nach § 40 VVG, Fristenrechner, HSN/TSN-Finder und Musterschreiben.',
   contact: {
     name: 'Jens Kathe',
     street: 'Hansastraße 6',

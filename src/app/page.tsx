@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { TarifcheckWidget } from '@/components/TarifcheckWidget';
 import PositionZeroBox from '@/components/PositionZeroBox';
+import SpecialCancellationChecker from '@/components/SpecialCancellationChecker';
+import NoticePeriodCalculator from '@/components/NoticePeriodCalculator';
 import SavingsCalculator from '@/components/SavingsCalculator';
+import HsnTsnExplainer from '@/components/HsnTsnExplainer';
 import CancellationGenerator from '@/components/CancellationGenerator';
 import GdvMatrix from '@/components/GdvMatrix';
 import CitationBox from '@/components/CitationBox';
@@ -28,9 +31,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'KFZ Wechselsaison 2026/2027 – Stichtag 30. November, Rechner & Kündigung',
+  title: 'Kfz-Versicherung wechseln & kündigen: Fristen-Checker, Rechner & Vorlagen',
   description:
-    'Unabhängiges Verbraucherportal zur Kfz-Wechselsaison: Gesetzliche Kündigungsfrist zum 30. November, Sonderkündigung nach § 40 VVG, Ersparnisrechner, Kündigungs-Generator und GDV-Typklassen.',
+    'Unabhängiges Verbraucherportal zum Kfz-Versicherungswechsel: Interaktiver Sonderkündigungs-Checker (§ 40 VVG), Kündigungsfrist-Rechner (auch unterjährig), HSN/TSN-Finder, Modellrechner und Musterschreiben.',
   alternates: {
     canonical: 'https://kfzwechselsaison.de/',
   },
@@ -118,61 +121,86 @@ export default function HomePage() {
           {/* Tagline Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-mono font-semibold tracking-wider uppercase mb-6 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-            <span>&sect; 40 VVG &middot; WECHSELSAISON 2026 / 2027</span>
+            <span>&sect; 40 VVG &middot; JEDERZEIT BEI BEITRAGSERHÖHUNG &middot; STICHTAG 30. NOVEMBER</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-950 tracking-tight leading-[1.08] mb-6">
-            Kfz-Versicherung wechseln:{' '}
+            Kfz-Versicherung wechseln &amp; kündigen:{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-500 underline decoration-amber-300 decoration-wavy decoration-2">
-              Stichtag 30. November
+              Fristen-Checker, Rechner &amp; Musterschreiben
             </span>
           </h1>
 
-          <p className="mx-auto max-w-2xl text-base sm:text-xl text-slate-700 leading-relaxed font-normal mb-8">
-            Das unabhängige Fachportal für Verbraucher: Gesetzliche Kündigungsfristen nach dem Versicherungsvertragsgesetz (VVG), interaktiver Ersparnisrechner, GDV-Typklassen und Muster-Kündigungsvorlagen.
+          <p className="mx-auto max-w-3xl text-base sm:text-xl text-slate-700 leading-relaxed font-normal mb-8">
+            Das unabhängige Informationsportal für Verbraucher: Interaktiver Sonderkündigungs-Checker nach &sect; 40 VVG, Kündigungsfrist-Rechner für unterjährige und kalenderjährliche Verträge, HSN/TSN-Fahrzeugschein-Finder und Musterschreiben.
           </p>
 
           {/* Quick CTA Pill Group */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-8">
             <a
-              href="#spar-rechner"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm sm:text-base transition-all shadow-sm active:scale-95 cursor-pointer"
+              href="#sonderkuendigungs-checker"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition-all shadow-sm active:scale-95 cursor-pointer"
             >
-              <Calculator className="w-4 h-4 text-amber-400" />
-              <span>Ersparnis berechnen</span>
+              <Scale className="w-4 h-4" />
+              <span>Sonderkündigung prüfen (&sect; 40 VVG)</span>
             </a>
             <a
-              href="#vergleichsrechner"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm sm:text-base transition-all shadow-sm active:scale-95 cursor-pointer"
+              href="#kuendigungsfrist-rechner"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-all shadow-sm active:scale-95 cursor-pointer"
             >
-              <span>Tarife vergleichen*</span>
-              <ArrowRight className="w-4 h-4" />
+              <Calendar className="w-4 h-4 text-amber-400" />
+              <span>Kündigungsfrist-Rechner</span>
+            </a>
+            <a
+              href="#hsn-tsn-guide"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-100 text-slate-800 font-bold text-sm transition-all active:scale-95 cursor-pointer"
+            >
+              <BookOpen className="w-4 h-4 text-slate-500" />
+              <span>HSN / TSN Finder</span>
             </a>
             <a
               href="#kuendigung-generator"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-100 text-slate-800 font-bold text-sm sm:text-base transition-all active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-slate-300 hover:bg-slate-100 text-slate-800 font-bold text-sm transition-all active:scale-95 cursor-pointer"
             >
               <FileText className="w-4 h-4 text-slate-500" />
-              <span>Kündigungs-Generator</span>
+              <span>Musterschreiben erstellen</span>
             </a>
+          </div>
+
+          {/* Utility-Jump-Bar */}
+          <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-3 max-w-4xl mx-auto mb-8 text-xs text-amber-950 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <span className="font-extrabold uppercase tracking-wider text-[11px] text-amber-900">Schnellzugriff Tools:</span>
+            <a href="#sonderkuendigungs-checker" className="hover:underline font-bold text-slate-900">&sect; 40 VVG Checker</a>
+            <span className="text-amber-300">&bull;</span>
+            <a href="#kuendigungsfrist-rechner" className="hover:underline font-bold text-slate-900">Fristen-Rechner</a>
+            <span className="text-amber-300">&bull;</span>
+            <a href="#spar-rechner" className="hover:underline font-bold text-slate-900">Modellrechner</a>
+            <span className="text-amber-300">&bull;</span>
+            <a href="#hsn-tsn-guide" className="hover:underline font-bold text-slate-900">HSN/TSN Guide</a>
+            <span className="text-amber-300">&bull;</span>
+            <a href="#kuendigung-generator" className="hover:underline font-bold text-slate-900">Kündigungsschreiben</a>
+            <span className="text-amber-300">&bull;</span>
+            <a href="#gdv-matrix" className="hover:underline font-bold text-slate-900">Typklassen-Simulator</a>
+            <span className="text-amber-300">&bull;</span>
+            <a href="#vergleichsrechner" className="hover:underline font-bold text-slate-900">Tarifvergleich*</a>
           </div>
 
           {/* Editorial Key Facts Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-6 border-t border-slate-200/80 text-left">
             <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
               <div className="text-[11px] font-mono text-slate-400 uppercase">Ordentliche Frist</div>
-              <div className="text-base font-extrabold text-slate-900 mt-0.5">30. November*</div>
-              <div className="text-[11px] text-slate-500">Vertrag &middot; &sect; 11 Abs. 3 VVG</div>
+              <div className="text-base font-extrabold text-slate-900 mt-0.5">1 Monat Frist</div>
+              <div className="text-[11px] text-slate-500">Zum Ablauf (z.B. 30.11.)</div>
             </div>
             <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
               <div className="text-[11px] font-mono text-slate-400 uppercase">Sonderkündigung</div>
-              <div className="text-base font-extrabold text-slate-900 mt-0.5">1 Monat Frist</div>
+              <div className="text-base font-extrabold text-slate-900 mt-0.5">1 Monat ab Zugang</div>
               <div className="text-[11px] text-slate-500">&sect; 40 Abs. 1 VVG</div>
             </div>
             <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
-              <div className="text-[11px] font-mono text-slate-400 uppercase">Typklassen</div>
-              <div className="text-base font-extrabold text-slate-900 mt-0.5">Typklassen verstehen</div>
-              <div className="text-[11px] text-slate-500">KH, TK &amp; VK Systematik</div>
+              <div className="text-[11px] font-mono text-slate-400 uppercase">Fahrzeugschein</div>
+              <div className="text-base font-extrabold text-slate-900 mt-0.5">HSN &amp; TSN</div>
+              <div className="text-[11px] text-slate-500">Feld 2.1 &amp; Feld 2.2</div>
             </div>
             <div className="bg-white/80 p-3 rounded-xl border border-slate-200">
               <div className="text-[11px] font-mono text-slate-400 uppercase">Portal-Status</div>
@@ -187,12 +215,21 @@ export default function HomePage() {
         {/* ==================== 1. POSITION 0 DEFINITIONS-BOX ==================== */}
         <PositionZeroBox />
 
-        {/* ==================== 2. INTERAKTIVER SPAR- & FRISTENRECHNER ==================== */}
+        {/* ==================== 2. SONDERKÜNDIGUNGS-CHECKER (§ 40 VVG) ==================== */}
+        <SpecialCancellationChecker />
+
+        {/* ==================== 3. KÜNDIGUNGSFRIST-RECHNER (AUCH UNTERJÄHRIG) ==================== */}
+        <NoticePeriodCalculator />
+
+        {/* ==================== 4. INTERAKTIVER MODELLRECHNER (SPARPOTENZIAL) ==================== */}
         <div id="spar-rechner" className="scroll-mt-20">
           <SavingsCalculator />
         </div>
 
-        {/* ==================== 3. TARIFVERGLEICH (TARIFCHECK WIDGET) ==================== */}
+        {/* ==================== 5. HSN / TSN FAHRZEUGSCHEIN-GUIDE ==================== */}
+        <HsnTsnExplainer />
+
+        {/* ==================== 6. TARIFVERGLEICH (TARIFCHECK WIDGET) ==================== */}
         <section id="vergleichsrechner" className="my-14 scroll-mt-20">
           <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-xs">
             <div className="text-center max-w-2xl mx-auto mb-6">
@@ -218,10 +255,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ==================== 4. KÜNDIGUNGSSCHREIBEN-GENERATOR ==================== */}
+        {/* ==================== 7. KÜNDIGUNGSSCHREIBEN-GENERATOR ==================== */}
         <CancellationGenerator />
 
-        {/* ==================== 5. GDV TYPKLASSEN MATRIX ==================== */}
+        {/* ==================== 8. GDV TYPKLASSEN MATRIX & SIMULATOR ==================== */}
         <GdvMatrix />
 
         {/* ==================== 6. DER WECHSEL IN 6 SCHRITTEN ==================== */}
@@ -276,10 +313,10 @@ export default function HomePage() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-amber-400 border border-amber-500/30 text-xs font-mono font-bold mb-2">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>REDAKTIONELLE GRUNDSÄTZE &middot; QUELLENNACHWEIS</span>
+                  <span>TRANSPARENZ &middot; QUELLENNACHWEIS</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                  Fachredaktion &amp; Primärquellen
+                  Rechtliche Grundlagen &amp; Primärquellen
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
                   Alle rechtlichen Erläuterungen, Modellrechnungen und Kündigungshinweise orientieren sich an den gesetzlichen Bestimmungen des Versicherungsvertragsgesetzes (VVG) sowie den Veröffentlichungen des Branchenverbands GDV und der BaFin.
@@ -287,7 +324,7 @@ export default function HomePage() {
               </div>
 
               <div className="text-xs font-mono text-slate-400 bg-slate-800/80 p-3 rounded-xl border border-slate-700 shrink-0">
-                <div>Bezugszeitraum: Wechselsaison 2026/2027</div>
+                <div>Zuletzt inhaltlich geprüft: September 2026</div>
                 <div className="text-slate-300 font-semibold mt-0.5">Sorgfalt nach &sect; 18 Abs. 2 MStV</div>
               </div>
             </div>
@@ -365,10 +402,10 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                Aktuelle Fachratgeber &amp; Fristen-Guides
+                Aktuelle Ratgeber &amp; Fristen-Guides
               </h2>
               <p className="text-sm text-slate-600 mt-1">
-                Vertiefende Fachartikel aus der Redaktion zur Optimierung Ihrer Kfz-Versicherung.
+                Vertiefende Artikel und praxisnahe Leitfäden zur Optimierung Ihrer Kfz-Versicherung.
               </p>
             </div>
             <Link

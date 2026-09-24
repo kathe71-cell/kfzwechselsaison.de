@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
 interface NavItem {
@@ -12,7 +13,18 @@ interface NavItem {
 
 const navigation: NavItem[] = [
   { label: 'Versicherung wechseln', href: '/kfz-versicherung-wechseln/' },
-  { label: 'Spar- & Fristenrechner', href: '/#spar-rechner' },
+  {
+    label: 'Rechner & Tools',
+    href: '/#sonderkuendigungs-checker',
+    children: [
+      { label: 'Sonderkündigungs-Checker (§ 40 VVG)', href: '/#sonderkuendigungs-checker' },
+      { label: 'Kündigungsfrist-Rechner', href: '/#kuendigungsfrist-rechner' },
+      { label: 'Sparpotenzial-Modellrechner', href: '/#spar-rechner' },
+      { label: 'HSN / TSN Finder (Fahrzeugschein)', href: '/#hsn-tsn-guide' },
+      { label: 'Musterschreiben-Generator', href: '/#kuendigung-generator' },
+      { label: 'Typklassen-Simulator (GDV)', href: '/#gdv-matrix' },
+    ],
+  },
   {
     label: 'Kündigung & Fristen',
     href: '/kfz-versicherung-kuendigen/',
@@ -38,13 +50,32 @@ const navigation: NavItem[] = [
 ]
 
 export function Header() {
+  const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setMobileOpen(false)
+    if (pathname === '/' || pathname === '') {
+      e.preventDefault()
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+      if (typeof window !== 'undefined' && window.location.hash) {
+        window.history.pushState(null, '', '/')
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    }
+  }
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
         {/* Logo */}
-        <Link href="/" className="flex items-baseline gap-1 no-underline" aria-label="KFZ Wechselsaison – Startseite">
+        <Link
+          href="/"
+          onClick={handleLogoClick}
+          className="flex items-baseline gap-1 no-underline cursor-pointer"
+          aria-label="KFZ Wechselsaison – Startseite"
+        >
           <span className="text-lg font-bold tracking-tight text-brand">KFZ</span>
           <span className="text-base font-medium tracking-tight text-text">Wechselsaison</span>
         </Link>

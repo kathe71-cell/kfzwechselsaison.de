@@ -139,13 +139,13 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-bold mb-2">
             <Calculator className="w-3.5 h-3.5 text-amber-700" />
-            <span>INTERAKTIVER WECHSELSAISON-RECHNER 2026/2027</span>
+            <span>BEISPIELHAFTE MODELLRECHNUNG &bull; SPARPOTENZIAL</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Kfz-Ersparnis- &amp; Fristen-Rechner
+            Kfz-Ersparnis-Modellrechner
           </h2>
-          <p className="text-sm text-slate-600 mt-1">
-            Beispielhafte Modellrechnung Ihres Sparpotenzials und Stichtags-Countdown für kalenderjährlich endende Verträge (31. Dezember).
+          <p className="text-sm text-slate-600 mt-1 max-w-xl">
+            Transparente Modellrechnung einer möglichen Beitragsdifferenz bei Tarifwechsel und Optimierung von Merkmalen wie Werkstattbindung oder Fahrleistung (kein verbindliches Angebot).
           </p>
         </div>
 
@@ -295,7 +295,7 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
             <div className="p-3.5 bg-emerald-50/60 rounded-xl border border-emerald-200/80 flex items-center justify-between gap-3">
               <div>
                 <div className="text-sm font-bold text-emerald-950">Werkstattbindung aktivieren?</div>
-                <div className="text-xs text-emerald-800">Spart durchschnittlich 15–20 % auf den Kaskobeitrag.</div>
+                <div className="text-xs text-emerald-800">Tarife mit Werkstattbindung können günstiger sein. Die tatsächliche Ersparnis hängt vom Versicherer und Tarif ab (Richtwert Kaskoanteil).</div>
               </div>
               <input
                 type="checkbox"
@@ -315,7 +315,7 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
 
           <div>
             <div className="text-xs font-mono tracking-widest text-amber-400 uppercase font-semibold">
-              Berechnetes Sparpotenzial
+              Modellhaftes Sparpotenzial*
             </div>
             <div className="mt-2 flex items-baseline gap-2">
               <span className="text-4xl sm:text-5xl font-black font-mono tracking-tight text-white">
@@ -327,7 +327,7 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
             </div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 text-xs font-bold mt-2">
               <TrendingDown className="w-3.5 h-3.5" />
-              <span>Bis zu {savingsPercent} % Ersparnis möglich*</span>
+              <span>Modellrechnung: ca. {savingsPercent} % Differenz*</span>
             </div>
 
             {/* Breakdown table */}
@@ -395,6 +395,22 @@ export default function SavingsCalculator({ isEmbed = false }: SavingsCalculator
               * Beispielhafte Modellrechnung. Die tatsächliche Beitragshöhe und individuelle Ersparnis hängen vom konkreten Fahrzeugtyp (Typklasse), Wohnort (Regionalklasse), individuellem Schadenverlauf sowie den Tarifkonditionen und Annahmerichtlinien der jeweiligen Versicherungsgesellschaft ab. Werkstattbindung wirkt sich ausschließlich auf Kaskobausteine aus.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Utility Cross-links */}
+      <div className="mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-600">
+        <span className="font-semibold text-slate-700">Passende Werkzeuge für Ihren Wechsel:</span>
+        <div className="flex flex-wrap items-center gap-3">
+          <a href="#kuendigungsfrist-rechner" className="inline-flex items-center gap-1 font-bold text-slate-900 hover:text-amber-600 transition-colors">
+            &rarr; Kündigungsfrist-Rechner (auch unterjährig)
+          </a>
+          <a href="#sonderkuendigungs-checker" className="inline-flex items-center gap-1 font-bold text-slate-900 hover:text-amber-600 transition-colors">
+            &rarr; Sonderkündigungs-Checker (§ 40 VVG)
+          </a>
+          <a href="#kuendigung-generator" className="inline-flex items-center gap-1 font-bold text-slate-900 hover:text-amber-600 transition-colors">
+            &rarr; Musterschreiben erstellen
+          </a>
         </div>
       </div>
 

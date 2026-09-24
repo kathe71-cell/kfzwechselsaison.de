@@ -33,7 +33,7 @@ export default function UeberUnsPage() {
           Um diesen Service kostenlos anbieten zu können, nutzen wir kommerzielle Partnerlinks (Affiliate-Links). Wenn Sie über einen solchen Link eine Versicherung abschließen, erhalten wir möglicherweise eine Provision vom Anbieter. Für Sie entstehen dadurch selbstverständlich keine zusätzlichen Kosten. Unsere redaktionelle Unabhängigkeit bleibt davon unberührt – wir empfehlen nur Angebote, von denen wir selbst überzeugt sind.
         </p>
         <p>
-          Weitere Informationen dazu finden Sie auf unserer Seite <Link href="/affiliate-hinweis" className="hover:underline">Affiliate-Hinweis & Transparenz</Link>.
+          Weitere Informationen dazu finden Sie auf unserer Seite <Link href="/affiliate-hinweis/" className="hover:underline">Affiliate-Hinweis & Transparenz</Link>.
         </p>
 
         <h2>Kontakt</h2>
@@ -44,7 +44,7 @@ export default function UeberUnsPage() {
           E-Mail: domain@kathe.org
         </p>
         <p>
-          Weitere Kontaktinformationen finden Sie in unserem <Link href="/impressum" className="hover:underline">Impressum</Link>.
+          Weitere Kontaktinformationen finden Sie in unserem <Link href="/impressum/" className="hover:underline">Impressum</Link>.
         </p>
       </div>
     </div>
