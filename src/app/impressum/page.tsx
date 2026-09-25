@@ -47,13 +47,6 @@ export default function ImpressumPage() {
         </section>
 
         <section className="bg-slate-50 p-6 rounded-xl border border-slate-200">
-          <h2 className="mb-3 text-lg font-bold text-slate-900">Umsatzsteuer &amp; Kleinunternehmerstatus</h2>
-          <p>
-            Als Kleinunternehmer im Sinne von <strong>§ 19 Abs. 1 UStG</strong> wird keine Umsatzsteuer berechnet und ausgewiesen.
-          </p>
-        </section>
-
-        <section className="bg-slate-50 p-6 rounded-xl border border-slate-200">
           <h2 className="mb-3 text-lg font-bold text-slate-900">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
           <p>
             Jens Kathe<br />
