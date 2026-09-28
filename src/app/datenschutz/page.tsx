@@ -51,10 +51,10 @@ export default function DatenschutzPage() {
           <h2 className="mb-2 text-xl font-semibold text-text">3. Hosting und Content Delivery Networks (CDN)</h2>
           <h3 className="mb-1 font-semibold text-text">Externes Hosting (Vercel)</h3>
           <p>
-            Diese Website wird bei dem externen Dienstleister <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden (z. B. IP-Adressen, technische Zugriffsdaten, Logfiles), werden auf den Servern des Hosters verarbeitet.
+            Diese Website wird bei dem externen Dienstleister <strong>Vercel Inc.</strong>, 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden (z. B. IP-Adressen, technische Zugriffsdaten, Logfiles), werden auf den Servern des Hosters verarbeitet.
           </p>
           <p className="mt-2">
-            Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Nutzern (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Wir haben mit Vercel die Standardvertragsklauseln der EU-Kommission (Data Processing Addendum) vereinbart.
+            Der Einsatz des Hosters erfolgt im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots (Art. 6 Abs. 1 lit. f DSGVO). Die Datenübertragung in die USA ist durch die Zertifizierung von Vercel unter dem EU-U.S. Data Privacy Framework (DPF) abgesichert.
           </p>
         </section>
 
@@ -69,6 +69,7 @@ export default function DatenschutzPage() {
             <li className="list-disc"><strong className="text-text">Löschungsrecht (Art. 17 DSGVO):</strong> Recht auf Löschung Ihrer bei uns gespeicherten Daten.</li>
             <li className="list-disc"><strong className="text-text">Einschränkung der Verarbeitung (Art. 18 DSGVO):</strong> Recht, die Einschränkung der Datenverarbeitung zu verlangen.</li>
             <li className="list-disc"><strong className="text-text">Datenübertragbarkeit (Art. 20 DSGVO):</strong> Recht auf Erhalt Ihrer Daten in einem strukturierten, gängigen Format.</li>
+            <li className="list-disc"><strong className="text-text">Widerspruchsrecht (Art. 21 DSGVO):</strong> Recht, der Verarbeitung Ihrer Daten auf Basis berechtigter Interessen zu widersprechen.</li>
             <li className="list-disc"><strong className="text-text">Widerrufsrecht (Art. 7 Abs. 3 DSGVO):</strong> Sie können eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.</li>
             <li className="list-disc"><strong className="text-text">Beschwerderecht (Art. 77 DSGVO):</strong> Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</li>
           </ul>
