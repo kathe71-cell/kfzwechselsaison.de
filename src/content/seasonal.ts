@@ -16,7 +16,7 @@ export const seasonalConfig: SeasonalConfig = {
   heroSubheadline:
     'Wechselsaison läuft: Kündigungsfrist endet am 30. November 2026. Jetzt Tarife vergleichen, kündigen und bis zu mehrere Hundert Euro sparen.',
   seasonalNotice:
-    'Achtung: Kündigung bis 30. November 2026 (23:59 Uhr) beim Versicherer einreichen – noch ca. 8 Wochen. Jetzt Tarife prüfen und Sonderkündigungsrecht (§ 40 VVG) checken.',
+    'Achtung: Kündigung bis 30. November 2026 (23:59 Uhr) beim Versicherer einreichen. Jetzt Tarife prüfen und Sonderkündigungsrecht (§ 40 VVG) checken.',
   seasonalBanner:
-    'Kfz-Wechselsaison 2026: Noch ca. 8 Wochen bis zum Stichtag 30. November – jetzt Beitrag vergleichen und rechtzeitig kündigen.',
+    'Kfz-Wechselsaison 2026: Stichtag 30. November – jetzt Beitrag vergleichen und rechtzeitig kündigen.',
 }
