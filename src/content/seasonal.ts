@@ -14,9 +14,9 @@ export const seasonalConfig: SeasonalConfig = {
   isWechselsaison: true,
   heroHeadline: 'Kfz-Versicherung wechseln: Jetzt Tarife vergleichen',
   heroSubheadline:
-    'Die Wechselsaison für Kfz-Versicherungen: Kündigungsfristen, Tarife und wichtige Tipps rund um den Versicherungswechsel.',
+    'Wechselsaison läuft: Kündigungsfrist endet am 30. November 2026. Jetzt Tarife vergleichen, kündigen und bis zu mehrere Hundert Euro sparen.',
   seasonalNotice:
-    '30. November im Blick? Prüfe jetzt deine Kfz-Versicherung und vergleiche rechtzeitig mögliche Alternativen.',
+    'Achtung: Kündigung bis 30. November 2026 (23:59 Uhr) beim Versicherer einreichen – noch ca. 8 Wochen. Jetzt Tarife prüfen und Sonderkündigungsrecht (§ 40 VVG) checken.',
   seasonalBanner:
-    'Die Kfz-Wechselsaison ist gestartet – prüfe jetzt deinen aktuellen Beitrag und vergleiche mögliche Alternativen.',
+    'Kfz-Wechselsaison 2026: Noch ca. 8 Wochen bis zum Stichtag 30. November – jetzt Beitrag vergleichen und rechtzeitig kündigen.',
 }
