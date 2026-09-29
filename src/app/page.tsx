@@ -10,6 +10,7 @@ import CancellationGenerator from '@/components/CancellationGenerator';
 import GdvMatrix from '@/components/GdvMatrix';
 import CitationBox from '@/components/CitationBox';
 import { StepProcess } from '@/components/StepProcess';
+import CountdownBanner from '@/components/CountdownBanner';
 import { InsuranceTypeCard } from '@/components/InsuranceTypeCard';
 import { FAQ } from '@/components/FAQ';
 import { ArticleCard } from '@/components/ArticleCard';
@@ -110,21 +111,6 @@ export default function HomePage() {
   const featuredArticles = articles.slice(0, 4);
   const selectedFaqs = faqItems.slice(0, 8);
 
-  // Dynamischer Countdown bis 30. November (ordentliche Kündigungsfrist)
-  const stichtag = new Date('2026-11-30T23:59:59');
-  const now = new Date();
-  const diffMs = stichtag.getTime() - now.getTime();
-  const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
-  const diffWeeks = Math.ceil(diffMs / (1000 * 60 * 60 * 24 * 7));
-  const isUrgent = diffDays > 0 && diffDays <= 14;
-  const countdownText = diffDays <= 0
-    ? 'Ordentliche Kündigungsfrist abgelaufen – Sonderkündigungsrecht (§ 40 VVG) prüfen'
-    : diffDays === 1
-    ? 'Nur noch 1 Tag bis zum Stichtag 30. November – jetzt handeln!'
-    : diffDays <= 14
-    ? `Nur noch ${diffDays} Tage bis zum Stichtag 30. November – jetzt handeln!`
-    : `Noch ${diffWeeks} Wochen bis zum Stichtag 30. November 2026 – jetzt Beitrag vergleichen`;
-
   return (
     <div className="bg-white">
       {/* ==================== HERO SECTION (LIGHT & EDITORIAL) ==================== */}
@@ -133,11 +119,8 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:20px_20px] opacity-40 pointer-events-none" />
 
         <div className="mx-auto max-w-5xl px-5 text-center relative z-10">
-          {/* Dynamischer Countdown-Banner */}
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono font-bold tracking-wider uppercase mb-4 shadow-xs ${isUrgent ? 'bg-red-600 text-white' : diffDays <= 0 ? 'bg-slate-700 text-white' : 'bg-amber-500 text-slate-950'}`}>
-            <span className={`w-2 h-2 rounded-full animate-ping ${isUrgent ? 'bg-white' : diffDays <= 0 ? 'bg-slate-300' : 'bg-slate-950'}`} />
-            <span>&#9200; {countdownText}</span>
-          </div>
+          {/* Dynamischer Live-Countdown (Client Component) */}
+          <CountdownBanner />
 
           {/* Tagline Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-mono font-semibold tracking-wider uppercase mb-6 shadow-xs">
