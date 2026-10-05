@@ -9,7 +9,6 @@ export const siteConfig = {
     zip: '34119',
     city: 'Kassel',
     country: 'Deutschland',
-    email: 'jens@kathe.org',
-    phone: '+49 178 6652623'
+    email: 'jens@kathe.org'
   }
 } as const;

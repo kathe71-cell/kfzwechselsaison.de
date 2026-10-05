@@ -38,11 +38,6 @@ export default function ImpressumPage() {
             <a href="mailto:jens@kathe.org" className="font-semibold text-slate-900 underline hover:text-amber-600">
               jens@kathe.org
             </a>
-            <br />
-            Telefon:{' '}
-            <a href="tel:+491786652623" className="font-semibold text-slate-900 underline hover:text-amber-600">
-              +49 178 6652623
-            </a>
           </p>
         </section>
 
